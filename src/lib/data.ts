@@ -220,40 +220,160 @@ export const galleryItems: GalleryItem[] = [
 ];
 
 export type Hotel = {
+  id: string;
   name: string;
+  location: string;
   stars: string;
+  rating: number;
+  pricePerNight: string;
   description: string;
   amenities: string[];
   image: string;
-  gallery: string[];
 };
 
 export const hotels: Hotel[] = [
   {
-    name: "Elite House, Panaji",
-    stars: "Five star",
+    id: "neo-majestic",
+    name: "Neo Majestic Luxury Resort",
+    location: "Porvorim, Panaji, Goa",
+    stars: "5 Star Luxury",
+    rating: 4.9,
+    pricePerNight: "₹8,500",
     description:
-      "Forty-two rooms above the river, each with a corner window and a night view of the water. Turndown at ten, a car whenever you need one, and the gaming floor two minutes from your door.",
-    amenities: ["Concierge", "Restaurant", "Spa", "Wi-Fi", "Valet parking"],
+      "Our premier partner hotel situated 5 minutes from the casino jetty. Features opulent suites, 3 specialty restaurants, a steam spa, and complimentary casino transfer.",
+    amenities: ["Spa & Wellness", "Swimming Pool", "3 Restaurants", "Casino Transfer", "Free High-Speed Wi-Fi", "Valet Parking"],
     image: hotel1,
-    gallery: [hotel1, hotel3, dining1],
   },
   {
-    name: "The Garden Wing",
-    stars: "Five star",
+    id: "goa-marriott",
+    name: "Goa Marriott Resort & Spa",
+    location: "Miramar Beach, Panaji",
+    stars: "5 Star Deluxe",
+    rating: 4.8,
+    pricePerNight: "₹14,000",
     description:
-      "Low villas set around a lantern-lit pool, screened by palms. Made for long stays: private terraces, an outdoor kitchen, and breakfast served whenever you wake.",
-    amenities: ["Pool", "Restaurant", "Wi-Fi", "Concierge", "Parking"],
+      "Sweeping views of the Arabian Sea and Mandovi River. Waterfront dining, a infinity pool, Quan Spa, and quick access to Panaji's nightlife.",
+    amenities: ["Oceanfront Pool", "Quan Spa", "Bayview Dining", "Fitness Center", "Concierge Service"],
     image: hotel2,
-    gallery: [hotel2, hotel3, casino1],
   },
   {
-    name: "The Stone Retreat",
-    stars: "Boutique",
+    id: "vivanta-panaji",
+    name: "Vivanta Goa, Panaji",
+    location: "St. Inez, Panaji",
+    stars: "5 Star",
+    rating: 4.7,
+    pricePerNight: "₹11,500",
     description:
-      "Nine suites built around a black-stone bathhouse. Candlelight, silence, and a therapist on call from dawn until midnight — the quiet half of the club.",
-    amenities: ["Spa", "Pool", "Wi-Fi", "Concierge"],
+      "Contemporary luxury in the heart of the capital city. Rooftop pool overlooking the Altinho hills, vibrant lounge bar, and 24-hour in-room dining.",
+    amenities: ["Rooftop Pool", "Tease Bar", "24/7 Dining", "Express Check-in", "Executive Lounge"],
     image: hotel3,
-    gallery: [hotel3, hotel1, hotel2],
+  },
+  {
+    id: "grand-hyatt",
+    name: "Grand Hyatt Goa",
+    location: "Bambolim Bay",
+    stars: "5 Star Luxury",
+    rating: 4.9,
+    pricePerNight: "₹18,000",
+    description:
+      "Set amidst 28 acres of tropical gardens overlooking Bambolim Bay. Indo-Portuguese architecture, Shamana Spa, and 7 dining venues.",
+    amenities: ["Private Beach Access", "Indo-Portuguese Architecture", "Shamana Spa", "7 Restaurants", "Kids Club"],
+    image: casino3,
+  },
+  {
+    id: "taj-fort-aguada",
+    name: "Taj Fort Aguada Resort",
+    location: "Sinquerim Beach, Candolim",
+    stars: "5 Star Heritage",
+    rating: 4.9,
+    pricePerNight: "₹22,000",
+    description:
+      "Goa's legendary sea-facing resort built into the ramparts of a 16th-century Portuguese fortress. Horizon pool and Jiva Spa.",
+    amenities: ["Heritage Ramparts", "Jiva Spa", "Horizon Pool", "Water Sports", "Fine Dining"],
+    image: casino1,
+  },
+  {
+    id: "w-goa",
+    name: "W Goa Resort",
+    location: "Vagator Beach",
+    stars: "5 Star Boutique",
+    rating: 4.8,
+    pricePerNight: "₹24,000",
+    description:
+      "Vibrant beachfront luxury where Portuguese heritage meets modern party vibe. Rock Pool cliffside bar and AWAY Spa.",
+    amenities: ["Rock Pool Cliffside Bar", "AWAY Spa", "Sunset Deck", "Pet Friendly", "DJ Performances"],
+    image: casino4,
+  },
+  {
+    id: "alila-diwa",
+    name: "Alila Diwa Goa",
+    location: "Majorda Beach, South Goa",
+    stars: "5 Star Sanctuary",
+    rating: 4.8,
+    pricePerNight: "₹15,000",
+    description:
+      "Serene sanctuary amidst lush paddy fields and Majorda beach. Double-height infinity pool, Spa Alila, and organic farm-to-table cuisine.",
+    amenities: ["Paddy View Infinity Pool", "Spa Alila", "Spice Studio", "Cinema Theatre", "Beach Shuttle"],
+    image: hotel1,
+  },
+  {
+    id: "the-leela",
+    name: "The Leela Goa",
+    location: "Cavelossim Beach, South Goa",
+    stars: "5 Star Deluxe",
+    rating: 4.9,
+    pricePerNight: "₹26,000",
+    description:
+      "75 acres of pristine lagoons, private beach, and a 12-hole golf course. Unrivaled royal Goan hospitality.",
+    amenities: ["12-Hole Golf Course", "Private Lagoon & Beach", "Royal Villas", "Ayurvedic Spa", "Yacht Rentals"],
+    image: hotel2,
+  },
+  {
+    id: "st-regis",
+    name: "The St. Regis Goa Resort",
+    location: "Mobor Beach, Cavelossim",
+    stars: "5 Star Ultra-Luxury",
+    rating: 4.9,
+    pricePerNight: "₹28,000",
+    description:
+      "Nestled between the Arabian Sea and Sal River. Signature St. Regis Butler service, executive golf green, and private cabanas.",
+    amenities: ["24/7 Butler Service", "Sal River Cruise", "Private Cabanas", "Golf Green", "Senses Spa"],
+    image: hotel3,
+  },
+  {
+    id: "itc-grand",
+    name: "ITC Grand Goa Resort & Spa",
+    location: "Arossim Beach",
+    stars: "5 Star Luxury",
+    rating: 4.8,
+    pricePerNight: "₹17,500",
+    description:
+      "Village-style resort featuring multi-level swimming pools, direct access to Arossim beach, and Kaya Kalp spa.",
+    amenities: ["Multi-Level Pools", "Direct Beach Access", "Kaya Kalp Spa", "Kebab & Kurry", "Royal Suites"],
+    image: casino2,
+  },
+  {
+    id: "hilton-goa",
+    name: "Hilton Goa Resort",
+    location: "Saipem Hills, Candolim",
+    stars: "5 Star Hilltop",
+    rating: 4.7,
+    pricePerNight: "₹12,000",
+    description:
+      "Perched on the scenic Saipem Hills overlooking Nerul River. 4 outdoor pools, private balcony plunge pools, and Mediterranean lounge.",
+    amenities: ["Hilltop Views", "4 Outdoor Pools", "Plunge Pool Suites", "Kid's Play Zone", "24hr Fitness"],
+    image: casino5,
+  },
+  {
+    id: "novotel-candolim",
+    name: "Novotel Goa Resort & Spa",
+    location: "Candolim, North Goa",
+    stars: "5 Star Premium",
+    rating: 4.6,
+    pricePerNight: "₹9,500",
+    description:
+      "Family-friendly resort near Candolim beach with vitality pool, Warren Tricomi Spa, and swim-up pool bar.",
+    amenities: ["Swim-Up Pool Bar", "Vitality Pool", "Warren Tricomi Spa", "Chy Restaurant", "Free Beach Shuttle"],
+    image: casino6,
   },
 ];
