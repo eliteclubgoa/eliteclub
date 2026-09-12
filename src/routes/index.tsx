@@ -174,7 +174,7 @@ function Index() {
                   className="w-6 h-6 rounded-full object-cover border border-[var(--gold)]/40"
                 />
                 <span className="text-xs font-semibold text-[var(--gold)] tracking-wider uppercase">
-                  Welcome to The Elite Club Casino
+                  Welcome to The Elite Club
                 </span>
               </div>
 

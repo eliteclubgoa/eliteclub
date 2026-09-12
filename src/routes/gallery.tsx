@@ -27,10 +27,10 @@ function GalleryPage() {
   const [active, setActive] = useState("All");
   const [lightbox, setLightbox] = useState<number | null>(null);
 
-  const filtered =
-    active === "All"
-      ? galleryItems
-      : galleryItems.filter((g) => g.category === active);
+  const filtered = galleryItems.filter((item) => {
+    const matchesCategory = active === "All" || item.category === active;
+    return matchesCategory;
+  });
 
   return (
     <div className="overflow-x-hidden">
@@ -60,42 +60,56 @@ function GalleryPage() {
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           {/* Filter Buttons */}
           <Reveal className="flex flex-wrap gap-3 mb-12 justify-center">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActive(cat)}
-                className={`gallery-filter-btn ${active === cat ? "active" : ""}`}
-              >
-                {cat}
-              </button>
-            ))}
+            <div className="flex flex-wrap gap-3 justify-center">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => {
+                    setActive(cat);
+                    setLightbox(null);
+                  }}
+                  className={`gallery-filter-btn ${active === cat ? "active" : ""}`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </Reveal>
 
           {/* Gallery Grid */}
-          <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {filtered.map((item, i) => (
-              <RevealItem key={`${item.alt}-${i}`}>
-                <button
-                  onClick={() => setLightbox(i)}
-                  className="relative aspect-[4/3] overflow-hidden rounded-lg border border-[var(--border)] group cursor-pointer w-full"
-                >
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0D]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <span className="text-[0.65rem] text-[var(--gold)] tracking-widest uppercase">
-                      {item.category}
-                    </span>
-                    <p className="text-sm text-foreground mt-1">{item.alt}</p>
-                  </div>
-                </button>
-              </RevealItem>
-            ))}
-          </RevealGroup>
+          {filtered.length > 0 ? (
+            <RevealGroup
+              key={active}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+            >
+              {filtered.map((item, i) => (
+                <RevealItem key={`${item.alt}-${i}`}>
+                  <button
+                    onClick={() => setLightbox(i)}
+                    className="relative aspect-[4/3] overflow-hidden rounded-lg border border-[var(--border)] group cursor-pointer w-full"
+                  >
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0D]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                      <span className="text-[0.65rem] text-[var(--gold)] tracking-widest uppercase">
+                        {item.category}
+                      </span>
+                      <p className="text-sm text-foreground mt-1">{item.alt}</p>
+                    </div>
+                  </button>
+                </RevealItem>
+              ))}
+            </RevealGroup>
+          ) : (
+            <div className="py-16 text-center text-muted-foreground">
+              No gallery items match your search. Try another keyword.
+            </div>
+          )}
         </div>
       </section>
 

@@ -46,9 +46,6 @@ export function Header() {
               <span className="text-lg sm:text-xl font-bold tracking-wider gold-text font-display">
                 THE ELITE CLUB
               </span>
-              <span className="text-[0.55rem] tracking-[0.35em] uppercase text-muted-foreground">
-                Casino
-              </span>
             </div>
           </Link>
 

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { games } from "@/lib/data";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
 import { Sparkles } from "lucide-react";
@@ -18,6 +19,12 @@ export const Route = createFileRoute("/games")({
 });
 
 function GamesPage() {
+  const categories = ["All", ...new Set(games.map((game) => game.category))];
+  const [active, setActive] = useState("All");
+  const filteredGames = games.filter((game) => {
+    return active === "All" || game.category === active;
+  });
+
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
@@ -44,8 +51,26 @@ function GamesPage() {
       {/* Games Grid */}
       <section className="section-py">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-          <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {games.map((game) => (
+          <Reveal className="flex flex-wrap gap-3 mb-12 justify-center">
+            <div className="flex flex-wrap gap-3 justify-center">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActive(category)}
+                  className={`gallery-filter-btn ${active === category ? "active" : ""}`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </Reveal>
+
+          {filteredGames.length > 0 ? (
+            <RevealGroup
+              key={active}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+            {filteredGames.map((game) => (
               <RevealItem key={game.name}>
                 <div className="game-card group">
                   <div className="aspect-[4/3]">
@@ -79,7 +104,12 @@ function GamesPage() {
                 </div>
               </RevealItem>
             ))}
-          </RevealGroup>
+            </RevealGroup>
+          ) : (
+            <div className="py-16 text-center text-muted-foreground">
+              No games match your search. Try another keyword.
+            </div>
+          )}
         </div>
       </section>
     </div>

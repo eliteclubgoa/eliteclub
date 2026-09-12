@@ -25,13 +25,21 @@ function HotelsPage() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const categories = ["All", "5 Star Luxury", "5 Star Deluxe", "5 Star Heritage", "5 Star Sanctuary"];
+  const normalizedSearch = searchQuery.trim().toLowerCase();
 
   const filteredHotels = hotels.filter((hotel) => {
     const matchesCat =
       selectedCategory === "All" || hotel.stars.toLowerCase().includes(selectedCategory.toLowerCase());
-    const matchesSearch =
-      hotel.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      hotel.location.toLowerCase().includes(searchQuery.toLowerCase());
+    const searchableText = [
+      hotel.name,
+      hotel.location,
+      hotel.stars,
+      hotel.description,
+      ...hotel.amenities,
+    ]
+      .join(" ")
+      .toLowerCase();
+    const matchesSearch = !normalizedSearch || searchableText.includes(normalizedSearch);
     return matchesCat && matchesSearch;
   });
 
@@ -85,6 +93,7 @@ function HotelsPage() {
                 placeholder="Search hotel or location..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                aria-label="Search hotels"
                 className="w-full px-4 py-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border)] text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-[var(--gold)]"
               />
             </div>
