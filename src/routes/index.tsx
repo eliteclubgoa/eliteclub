@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { site, stats } from "@/lib/site";
 import { games as gamesData } from "@/lib/data";
+import { GameAnimation } from "@/components/site/GameAnimation";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTAAnchor } from "@/components/site/CTAButton";
@@ -312,12 +313,8 @@ function Index() {
           <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {homeGames.map((game) => (
               <RevealItem key={game.name}>
-                <div className="game-card aspect-[4/3]">
-                  <img
-                    src={game.image}
-                    alt={game.name}
-                    loading="lazy"
-                  />
+                <div className="game-card game-card--live aspect-[4/3]">
+                  <GameAnimation name={game.name} full />
                   <div className="game-overlay">
                     <span className="text-[0.65rem] font-medium text-[var(--gold)] tracking-widest uppercase mb-1">
                       {game.category}

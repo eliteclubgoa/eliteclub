@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { games } from "@/lib/data";
+import { GameAnimation } from "@/components/site/GameAnimation";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
 import { Sparkles } from "lucide-react";
 
@@ -72,14 +73,8 @@ function GamesPage() {
             >
             {filteredGames.map((game) => (
               <RevealItem key={game.name}>
-                <div className="game-card group">
-                  <div className="aspect-[4/3]">
-                    <img
-                      src={game.image}
-                      alt={game.name}
-                      loading="lazy"
-                    />
-                  </div>
+                <div className="game-card game-card--live aspect-[4/3]">
+                  <GameAnimation name={game.name} full />
                   <div className="game-overlay">
                     <span className="text-[0.65rem] font-medium text-[var(--gold)] tracking-widest uppercase mb-1">
                       {game.category}
