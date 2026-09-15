@@ -30,14 +30,14 @@ export function PremiumCard({
       <span className="pointer-events-none absolute top-0 left-0 h-5 w-5 border-t border-l border-accent/0 transition-colors duration-500 group-hover:border-accent/70" />
       <span className="pointer-events-none absolute right-0 bottom-0 h-5 w-5 border-r border-b border-accent/0 transition-colors duration-500 group-hover:border-accent/70" />
 
-      <div className={cn("relative overflow-hidden", ratio)}>
+      <div className={cn("relative overflow-hidden bg-[#0C0C0D]", ratio)}>
         <img
           src={image}
           alt={alt}
           loading="lazy"
-          className="h-full w-full object-cover opacity-80 transition-transform duration-[900ms] ease-out group-hover:scale-[1.07] group-hover:opacity-100"
+          className="h-full w-full object-contain p-2 opacity-90 transition-transform duration-[900ms] ease-out group-hover:scale-[1.02] group-hover:opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/15 to-transparent" />
       </div>
 
       <div className="flex flex-1 flex-col gap-3 p-6 sm:p-7">

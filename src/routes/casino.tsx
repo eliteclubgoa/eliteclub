@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTAAnchor } from "@/components/site/CTAButton";
 import { PremiumCard } from "@/components/site/PremiumCard";
 import { MapPin, Sparkles } from "lucide-react";
-import heroCasino from "@/assets/hero-casino.jpg";
+import heroCasino from "@/assets/casino/casino pride.png";
 
 export const Route = createFileRoute("/casino")({
   component: CasinoPage,
@@ -64,15 +64,8 @@ function CasinoPage() {
                 <PremiumCard
                   image={casino.image}
                   alt={casino.name}
-                  eyebrow={casino.location}
                   title={casino.name}
                   text={casino.short}
-                  footer={
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <MapPin size={12} className="text-[var(--gold)]" />
-                      {casino.location}
-                    </div>
-                  }
                 />
               </RevealItem>
             ))}

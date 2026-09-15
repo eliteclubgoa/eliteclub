@@ -111,7 +111,7 @@ function Index() {
     fetch(`${site.packagesApi}?date=${today}`)
       .then((r) => r.json())
       .then((data: Plan[]) => setPlans(data))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   /* Form validation */
@@ -150,7 +150,7 @@ function Index() {
       {/*  HERO BANNER                                                  */}
       {/* ============================================================ */}
       <section
-        className="relative min-h-screen flex items-center gradient-hero overflow-hidden"
+        className="relative flex min-h-screen items-center overflow-hidden pt-36 gradient-hero sm:pt-40 lg:pt-44"
         id="hero-section"
       >
         {/* Background decorations */}
@@ -159,7 +159,7 @@ function Index() {
           <div className="absolute bottom-1/4 -right-32 w-80 h-80 rounded-full bg-purple-500/5 blur-[120px]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1400px] w-full px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-24">
+        <div className="relative mx-auto w-full max-w-[1400px] px-4 pb-16 pt-6 sm:px-6 lg:px-8 lg:pb-24 lg:pt-8">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-8 items-center">
             {/* Left: Content */}
             <motion.div
@@ -168,19 +168,9 @@ function Index() {
               transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="text-center xl:text-left order-2 xl:order-1"
             >
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--gold)]/20 bg-[var(--gold)]/5 mb-6">
-                <img
-                  src={logoImg}
-                  alt="The Elite Club Crown Logo"
-                  className="w-6 h-6 rounded-full object-cover border border-[var(--gold)]/40"
-                />
-                <span className="text-xs font-semibold text-[var(--gold)] tracking-wider uppercase">
-                  Welcome to The Elite Club
-                </span>
-              </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display text-foreground leading-tight mb-6">
-                Goa&apos;s Largest &amp;{" "}
+                Goa&apos;s Best &amp;{" "}
                 <span className="gold-text">Most Iconic</span> Offshore Casino
                 Experience
               </h1>

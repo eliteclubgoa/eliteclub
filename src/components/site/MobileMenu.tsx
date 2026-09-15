@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { site, navLinks, externalLinks } from "@/lib/site";
 import { CTAAnchor } from "./CTAButton";
 
-import logoImg from "@/assets/logo.jpg";
+import logoImg from "@/assets/logo.png";
 
 export function MobileMenu({
   open,
@@ -39,15 +39,17 @@ export function MobileMenu({
           >
             {/* Close Button */}
             <div className="flex items-center justify-between px-6 py-5">
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-3">
                 <img
                   src={logoImg}
                   alt="The Elite Club Logo"
-                  className="w-8 h-8 rounded-full object-cover border border-[var(--gold)]/40"
+                  className="h-16 w-16 rounded-full border-2 border-[var(--gold)] object-cover shadow-[0_0_25px_rgba(255,215,0,0.3)] flex-shrink-0"
                 />
-                <span className="text-base font-bold gold-text font-display tracking-wider">
-                  THE ELITE CLUB
-                </span>
+                <div className="flex flex-col leading-tight">
+                  <span className="text-base sm:text-lg font-extrabold gold-text font-display tracking-[0.14em] uppercase">
+                    THE ELITE CLUB
+                  </span>
+                </div>
               </div>
               <button
                 onClick={onClose}

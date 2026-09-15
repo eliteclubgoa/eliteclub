@@ -14,7 +14,6 @@ import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as CasinoRouteImport } from './routes/casino'
 import { Route as CommunityGuidelinesRouteImport } from './routes/community-guidelines'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as EventsRouteImport } from './routes/events'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GamesRouteImport } from './routes/games'
 import { Route as HotelsRouteImport } from './routes/hotels'
@@ -44,11 +43,6 @@ const CommunityGuidelinesRoute = CommunityGuidelinesRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EventsRoute = EventsRouteImport.update({
-  id: '/events',
-  path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -83,7 +77,6 @@ export interface FileRoutesByFullPath {
   '/casino': typeof CasinoRoute
   '/community-guidelines': typeof CommunityGuidelinesRoute
   '/contact': typeof ContactRoute
-  '/events': typeof EventsRoute
   '/gallery': typeof GalleryRoute
   '/games': typeof GamesRoute
   '/hotels': typeof HotelsRoute
@@ -96,7 +89,6 @@ export interface FileRoutesByTo {
   '/casino': typeof CasinoRoute
   '/community-guidelines': typeof CommunityGuidelinesRoute
   '/contact': typeof ContactRoute
-  '/events': typeof EventsRoute
   '/gallery': typeof GalleryRoute
   '/games': typeof GamesRoute
   '/hotels': typeof HotelsRoute
@@ -110,7 +102,6 @@ export interface FileRoutesById {
   '/casino': typeof CasinoRoute
   '/community-guidelines': typeof CommunityGuidelinesRoute
   '/contact': typeof ContactRoute
-  '/events': typeof EventsRoute
   '/gallery': typeof GalleryRoute
   '/games': typeof GamesRoute
   '/hotels': typeof HotelsRoute
@@ -125,7 +116,6 @@ export interface FileRouteTypes {
     | '/casino'
     | '/community-guidelines'
     | '/contact'
-    | '/events'
     | '/gallery'
     | '/games'
     | '/hotels'
@@ -138,7 +128,6 @@ export interface FileRouteTypes {
     | '/casino'
     | '/community-guidelines'
     | '/contact'
-    | '/events'
     | '/gallery'
     | '/games'
     | '/hotels'
@@ -151,7 +140,6 @@ export interface FileRouteTypes {
     | '/casino'
     | '/community-guidelines'
     | '/contact'
-    | '/events'
     | '/gallery'
     | '/games'
     | '/hotels'
@@ -165,7 +153,6 @@ export interface RootRouteChildren {
   CasinoRoute: typeof CasinoRoute
   CommunityGuidelinesRoute: typeof CommunityGuidelinesRoute
   ContactRoute: typeof ContactRoute
-  EventsRoute: typeof EventsRoute
   GalleryRoute: typeof GalleryRoute
   GamesRoute: typeof GamesRoute
   HotelsRoute: typeof HotelsRoute
@@ -208,13 +195,6 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/events': {
-      id: '/events'
-      path: '/events'
-      fullPath: '/events'
-      preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -261,7 +241,6 @@ const rootRouteChildren: RootRouteChildren = {
   CasinoRoute: CasinoRoute,
   CommunityGuidelinesRoute: CommunityGuidelinesRoute,
   ContactRoute: ContactRoute,
-  EventsRoute: EventsRoute,
   GalleryRoute: GalleryRoute,
   GamesRoute: GamesRoute,
   HotelsRoute: HotelsRoute,

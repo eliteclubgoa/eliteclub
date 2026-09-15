@@ -35,7 +35,7 @@ function GalleryPage() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="gradient-hero pt-32 pb-16">
+      <section className="gradient-hero pt-40 pb-16 sm:pt-44 lg:pt-48">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--gold)]/20 bg-[var(--gold)]/5 mb-6">

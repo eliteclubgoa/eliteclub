@@ -4,7 +4,7 @@ import { ArrowUp } from "lucide-react";
 import { site, footerUseful, footerLegal } from "@/lib/site";
 import { Reveal } from "./Reveal";
 
-import logoImg from "@/assets/logo.jpg";
+import logoImg from "@/assets/logo.png";
 
 export function Footer() {
   const [showTop, setShowTop] = useState(false);
@@ -26,14 +26,11 @@ export function Footer() {
                 <img
                   src={logoImg}
                   alt="The Elite Club Logo"
-                  className="w-12 h-12 rounded-full object-cover border border-[var(--gold)]/40 mb-3 shadow-[0_0_20px_rgba(255,215,0,0.2)]"
+                  className="w-28 h-28 sm:w-36 sm:h-36 rounded-full border-[3px] border-[var(--gold)] object-cover mb-4 shadow-[0_0_35px_rgba(255,215,0,0.35)]"
                 />
-                <h3 className="text-xl font-bold gold-text font-display tracking-wider mb-2">
+                <h3 className="text-2xl sm:text-3xl font-extrabold gold-text font-display tracking-[0.14em] uppercase mb-4 drop-shadow-[0_2px_10px_rgba(255,215,0,0.3)]">
                   THE ELITE CLUB
                 </h3>
-                <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-6">
-                  Casino
-                </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Goa&apos;s largest and most iconic offshore casino experience on the Mandovi River.
                 </p>

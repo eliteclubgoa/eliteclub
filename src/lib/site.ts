@@ -34,19 +34,21 @@ export const navLinks = [
   { to: "/casino", label: "Casino" },
   { to: "/games", label: "Games" },
   { to: "/hotels", label: "Hotels" },
-  { to: "/events", label: "Events" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact Us" },
 ] as const;
 
-export const externalLinks = [] as const;
+export const externalLinks: Array<{
+  href: string;
+  label: string;
+  target?: string;
+}> = [];
 
 export const footerUseful = [
   { to: "/", label: "Home Page" },
   { to: "/casino", label: "Casino" },
   { to: "/games", label: "Games" },
   { to: "/hotels", label: "Hotels" },
-  { to: "/events", label: "Events" },
   { to: "/gallery", label: "Gallery" },
 ] as const;
 

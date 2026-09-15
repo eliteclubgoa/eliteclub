@@ -1,10 +1,9 @@
 import heroCasino from "@/assets/hero-casino.jpg";
-import casino1 from "@/assets/casino-1.jpg";
-import casino2 from "@/assets/casino-2.jpg";
-import casino3 from "@/assets/casino-3.jpg";
-import casino4 from "@/assets/casino-4.jpg";
-import casino5 from "@/assets/casino-5.jpg";
-import casino6 from "@/assets/casino-6.jpg";
+import casinoGold from "@/assets/casino/casino gold.webp";
+import casinoPride from "@/assets/casino/casino pride.png";
+import casinoRivers from "@/assets/casino/casino rivers.webp";
+import ocean7Casino from "@/assets/casino/Ocean7.webp";
+import bigDaddy from "@/assets/casino/big-daddy.webp";
 import hotel1 from "@/assets/hotel-1.jpg";
 import hotel2 from "@/assets/hotel-2.jpg";
 import hotel3 from "@/assets/hotel-3.jpg";
@@ -17,22 +16,34 @@ import gameSlots from "@/assets/game-slots.jpg";
 import gameAndarBahar from "@/assets/game-andarbahar.jpg";
 import dining1 from "@/assets/dining-1.jpg";
 import entertainment1 from "@/assets/entertainment-1.jpg";
-import events1 from "@/assets/events-1.jpg";
+import galleryAmericanRoulette from "@/assets/gallery/american_roul.jpeg";
+import galleryCasino10 from "@/assets/gallery/casino_10.jpeg";
+import galleryCasino2 from "@/assets/gallery/casino_2.webp";
+import galleryCasino4 from "@/assets/gallery/casino_4.avif";
+import galleryCasino5Jpeg from "@/assets/gallery/casino_5.jpeg";
+import galleryCasino5Webp from "@/assets/gallery/casino_5.webp";
+import galleryCasino6 from "@/assets/gallery/casino_6.jpeg";
+import galleryCasino7 from "@/assets/gallery/casino_7.webp";
+import galleryCasino9 from "@/assets/gallery/casino_9.webp";
+import galleryEnterJpeg from "@/assets/gallery/enter.jpeg";
+import galleryEnterPng from "@/assets/gallery/enter.png";
+import galleryFood from "@/assets/gallery/food.webp";
+import galleryFood2 from "@/assets/gallery/food_2.webp";
+import galleryFood3 from "@/assets/gallery/food_3.webp";
 
 export const images = {
   heroCasino,
-  casino1,
-  casino2,
-  casino3,
-  casino4,
-  casino5,
-  casino6,
+  mandoviRoom: casinoGold,
+  vessel: casinoPride,
+  atrium: casinoRivers,
+  terrace: ocean7Casino,
+  salon: bigDaddy,
+  galleryFloor: casinoGold,
   hotel1,
   hotel2,
   hotel3,
   dining1,
   entertainment1,
-  events1,
 };
 
 export type Casino = {
@@ -48,58 +59,58 @@ export type Casino = {
 // Placeholder venues — names, locations and photography are all easy to swap.
 export const casinos: Casino[] = [
   {
-    slug: "the-mandovi-room",
-    name: "The Mandovi Room",
-    location: "Panaji Riverfront, Goa",
-    short: "Our founding floor, where the river light meets black marble.",
-    full: "The room that started the club. Eleven tables under hand-cut crystal, a marble bar poured in a single slab, and a service ratio no other floor in the city can match. Reserved seating is released to members first.",
-    image: casino1,
-    gallery: [casino1, casino3, dining1],
+    slug: "casino-gold",
+    name: "Casino Gold",
+    location: "",
+    short: "A premium offshore casino in Goa offering a lively gaming experience with a variety of casino games, entertainment, dining, and nightlife.",
+    full: "A premium offshore casino in Goa offering a lively gaming experience with a variety of casino games, entertainment, dining, and nightlife.",
+    image: casinoGold,
+    gallery: [casinoGold, casinoRivers, dining1],
   },
   {
-    slug: "the-vessel",
-    name: "The Vessel",
-    location: "Offshore, Mandovi River",
-    short: "A private gaming deck that sails at dusk and returns after midnight.",
-    full: "Three decks of quiet leather and brass, cast off nightly. Table games below, a cigar terrace above, and a chef's counter between. Capacity is deliberately small — sixty guests, never more.",
-    image: casino2,
-    gallery: [casino2, casino4, entertainment1],
+    slug: "casino-pride",
+    name: "Casino Pride",
+    location: "",
+    short: "A popular offshore casino in Goa known for its vibrant atmosphere, wide range of gaming options, live entertainment, and dining facilities.",
+    full: "A popular offshore casino in Goa known for its vibrant atmosphere, wide range of gaming options, live entertainment, and dining facilities.",
+    image: casinoPride,
+    gallery: [casinoPride, ocean7Casino, entertainment1],
   },
   {
-    slug: "the-atrium",
-    name: "The Atrium",
-    location: "Dona Paula, Goa",
-    short: "Our grandest arrival: a marble staircase and a chandelier of 4,000 drops.",
-    full: "Built for occasion. The staircase is the club's signature photograph and the mezzanine holds four private salons, each bookable for an evening with its own dealer and host.",
-    image: casino3,
-    gallery: [casino3, casino1, events1],
+    slug: "casino-rivers",
+    name: "Casino Rivers",
+    location: "",
+    short: "A modern offshore casino in Goa offering an exciting gaming environment along with entertainment, dining, and a premium casino experience.",
+    full: "A modern offshore casino in Goa offering an exciting gaming environment along with entertainment, dining, and a premium casino experience.",
+    image: casinoRivers,
+    gallery: [casinoRivers, casinoGold, entertainment1],
   },
   {
-    slug: "the-terrace",
-    name: "The Terrace",
-    location: "Rooftop, Miramar",
-    short: "Open-air play above the city, from sundown until the last hand.",
-    full: "Six tables under the sky with the skyline as the only decoration. A dedicated cocktail programme, a resident saxophonist on weekends, and heaters for the short winter.",
-    image: casino4,
-    gallery: [casino4, entertainment1, dining1],
+    slug: "ocean-7",
+    name: "Ocean 7",
+    location: "",
+    short: "A well-known offshore casino in Goa that provides a stylish gaming experience with multiple casino games, entertainment, and onboard dining.",
+    full: "A well-known offshore casino in Goa that provides a stylish gaming experience with multiple casino games, entertainment, and onboard dining.",
+    image: ocean7Casino,
+    gallery: [ocean7Casino, entertainment1, dining1],
   },
   {
-    slug: "the-salon",
-    name: "The Salon",
-    location: "By invitation, Panaji",
-    short: "One table. One dealer. Whoever you choose to bring.",
-    full: "Our most private room, released by invitation only. A single baize table, drapes drawn, a host who never leaves the door. Stakes, hours and menu are set by the party.",
-    image: casino5,
-    gallery: [casino5, dining1, casino1],
+    slug: "big-daddy",
+    name: "Big Daddy Casino",
+    location: "",
+    short: "One of Goa’s prominent offshore casinos, offering a luxurious casino experience with various games, entertainment, dining, and nightlife.",
+    full: "One of Goa’s prominent offshore casinos, offering a luxurious casino experience with various games, entertainment, dining, and nightlife.",
+    image: bigDaddy,
+    gallery: [bigDaddy, dining1, casinoGold],
   },
   {
-    slug: "the-gallery-floor",
-    name: "The Gallery Floor",
-    location: "Vasco, Goa",
-    short: "A mirrored deco promenade of slots and quick-play tables.",
-    full: "Lighter in mood and faster in pace. Mirrored walls, gold hairline trim, a long promenade of machines, and a bar that stays open as long as the floor does.",
-    image: casino6,
-    gallery: [casino6, gameSlots, casino4],
+    slug: "elite-club-casino",
+    name: "The Elite Club",
+    location: "",
+    short: "The signature luxury gaming experience, blending premium hospitality with iconic river views.",
+    full: "The signature luxury gaming experience, blending premium hospitality with iconic river views.",
+    image: casinoGold,
+    gallery: [casinoGold, gameSlots, ocean7Casino],
   },
 ];
 
@@ -205,18 +216,16 @@ export type GalleryItem = {
 };
 
 export const galleryItems: GalleryItem[] = [
-  { src: gameRoulette, alt: "Roulette wheel mid-spin under low light", category: "Games" },
-  { src: gameBlackjack, alt: "Blackjack table with cards fanned out", category: "Games" },
-  { src: gamePoker, alt: "Private poker room lit by a single lamp", category: "Games" },
-  { src: gameTeenPatti, alt: "Three playing cards held above green baize", category: "Games" },
-  { src: entertainment1, alt: "Saxophonist performing in a spotlight", category: "Entertainment" },
-  { src: casino4, alt: "Rooftop lounge overlooking the city at night", category: "Entertainment" },
-  { src: events1, alt: "Champagne tower at a black-tie celebration", category: "Events" },
-  { src: casino3, alt: "Marble staircase beneath a crystal chandelier", category: "Events" },
-  { src: dining1, alt: "Plated tasting course in a dark dining room", category: "Dining" },
-  { src: casino1, alt: "Marble bar in a low-lit club salon", category: "Dining" },
-  { src: casino6, alt: "Mirrored deco promenade of gaming machines", category: "Games" },
-  { src: gameBaccarat, alt: "Baccarat table set with chips and champagne", category: "Games" },
+  { src: galleryAmericanRoulette, alt: "Roulette wheel mid-spin under low light", category: "Games" },
+  { src: galleryCasino10, alt: "Casino floor under warm gold lights", category: "Games" },
+  { src: galleryCasino4, alt: "Luxury casino lounge and gaming ambience", category: "Games" },
+  { src: galleryCasino5Jpeg, alt: "Premium casino table setting with a rich atmosphere", category: "Games" },
+  { src: galleryEnterJpeg, alt: "Live entertainment and stage ambience", category: "Entertainment" },
+  { src: galleryEnterPng, alt: "Nightlife atmosphere with a vibrant entertainment mood", category: "Entertainment" },
+  { src: galleryFood, alt: "Plated dining experience with premium presentation", category: "Dining" },
+  { src: galleryFood2, alt: "Luxury dining and gourmet table styling", category: "Dining" },
+  { src: galleryFood3, alt: "Premium food presentation in a stylish setting", category: "Dining" },
+  { src: galleryCasino2, alt: "Casino interior with glowing ambiance and premium styling", category: "Games" },
 ];
 
 export type Hotel = {
@@ -278,7 +287,7 @@ export const hotels: Hotel[] = [
     description:
       "Set amidst 28 acres of tropical gardens overlooking Bambolim Bay. Indo-Portuguese architecture, Shamana Spa, and 7 dining venues.",
     amenities: ["Private Beach Access", "Indo-Portuguese Architecture", "Shamana Spa", "7 Restaurants", "Kids Club"],
-    image: casino3,
+    image: casinoRivers,
   },
   {
     id: "taj-fort-aguada",
@@ -290,7 +299,7 @@ export const hotels: Hotel[] = [
     description:
       "Goa's legendary sea-facing resort built into the ramparts of a 16th-century Portuguese fortress. Horizon pool and Jiva Spa.",
     amenities: ["Heritage Ramparts", "Jiva Spa", "Horizon Pool", "Water Sports", "Fine Dining"],
-    image: casino1,
+    image: casinoGold,
   },
   {
     id: "w-goa",
@@ -302,7 +311,7 @@ export const hotels: Hotel[] = [
     description:
       "Vibrant beachfront luxury where Portuguese heritage meets modern party vibe. Rock Pool cliffside bar and AWAY Spa.",
     amenities: ["Rock Pool Cliffside Bar", "AWAY Spa", "Sunset Deck", "Pet Friendly", "DJ Performances"],
-    image: casino4,
+    image: ocean7Casino,
   },
   {
     id: "alila-diwa",
@@ -350,7 +359,7 @@ export const hotels: Hotel[] = [
     description:
       "Village-style resort featuring multi-level swimming pools, direct access to Arossim beach, and Kaya Kalp spa.",
     amenities: ["Multi-Level Pools", "Direct Beach Access", "Kaya Kalp Spa", "Kebab & Kurry", "Royal Suites"],
-    image: casino2,
+    image: casinoPride,
   },
   {
     id: "hilton-goa",
@@ -362,7 +371,7 @@ export const hotels: Hotel[] = [
     description:
       "Perched on the scenic Saipem Hills overlooking Nerul River. 4 outdoor pools, private balcony plunge pools, and Mediterranean lounge.",
     amenities: ["Hilltop Views", "4 Outdoor Pools", "Plunge Pool Suites", "Kid's Play Zone", "24hr Fitness"],
-    image: casino5,
+    image: bigDaddy,
   },
   {
     id: "novotel-candolim",
@@ -374,6 +383,6 @@ export const hotels: Hotel[] = [
     description:
       "Family-friendly resort near Candolim beach with vitality pool, Warren Tricomi Spa, and swim-up pool bar.",
     amenities: ["Swim-Up Pool Bar", "Vitality Pool", "Warren Tricomi Spa", "Chy Restaurant", "Free Beach Shuttle"],
-    image: casino6,
+    image: casinoGold,
   },
 ];
