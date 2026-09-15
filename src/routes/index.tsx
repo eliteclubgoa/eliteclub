@@ -7,8 +7,6 @@ import {
   Mail,
   ChevronRight,
   Sparkles,
-  Dice5,
-  Star,
 } from "lucide-react";
 import { site, stats } from "@/lib/site";
 import { games as gamesData } from "@/lib/data";
@@ -16,7 +14,6 @@ import { GameAnimation } from "@/components/site/GameAnimation";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTAAnchor } from "@/components/site/CTAButton";
-import heroCasino from "@/assets/hero-casino.jpg";
 import logoImg from "@/assets/logo.jpg";
 
 export const Route = createFileRoute("/")({
@@ -210,54 +207,6 @@ function Index() {
               </div>
             </motion.div>
 
-            {/* Right: Hero Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="relative order-1 xl:order-2"
-            >
-              <div className="relative rounded-2xl overflow-hidden border border-[var(--gold)]/10 shadow-2xl">
-                <img
-                  src={heroCasino}
-                  alt="The Elite Club Casino - Luxury offshore casino on the Mandovi River"
-                  className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0D]/60 via-transparent to-transparent" />
-
-                {/* Floating badge */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute bottom-6 left-6 flex items-center gap-2 px-4 py-2 rounded-full bg-[#0C0C0D]/80 backdrop-blur-md border border-[var(--gold)]/20"
-                >
-                  <Dice5 size={16} className="text-[var(--gold)]" />
-                  <span className="text-sm font-medium text-foreground">
-                    100+ Casino Games
-                  </span>
-                </motion.div>
-              </div>
-
-              {/* Decorative floating element */}
-              <motion.div
-                animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="hidden xl:block absolute -top-6 -right-6 w-20 h-20 rounded-full bg-[var(--gold)]/10 backdrop-blur-sm border border-[var(--gold)]/20 flex items-center justify-center"
-              >
-                <Star
-                  size={28}
-                  className="text-[var(--gold)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                />
-              </motion.div>
-            </motion.div>
           </div>
         </div>
       </section>
