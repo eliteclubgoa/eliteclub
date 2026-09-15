@@ -38,7 +38,7 @@ export function Header() {
           <div className="flex items-center justify-between gap-4">
             <Link
               to="/"
-              className="group flex shrink-0 items-center gap-3 md:gap-5"
+              className="group flex min-w-0 shrink items-center gap-2 sm:gap-3 md:gap-5"
               id="header-logo"
             >
               <div className="relative flex-shrink-0">
@@ -46,11 +46,11 @@ export function Header() {
                 <img
                   src={logoImg}
                   alt="The Elite Club Logo"
-                  className="relative h-20 w-20 rounded-full border-[3px] border-[var(--gold)] object-cover shadow-[0_0_35px_rgba(255,215,0,0.42)] transition-transform duration-300 group-hover:scale-105 sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                  className="relative h-14 w-14 rounded-full border-[3px] border-[var(--gold)] object-cover shadow-[0_0_35px_rgba(255,215,0,0.42)] transition-transform duration-300 group-hover:scale-105 sm:h-20 sm:w-20 lg:h-28 lg:w-28"
                 />
               </div>
-              <div className="hidden sm:flex flex-col justify-center leading-none">
-                <span className="font-display text-xl font-extrabold uppercase tracking-[0.18em] text-[var(--gold)] drop-shadow-[0_3px_10px_rgba(255,215,0,0.35)] sm:text-2xl lg:text-[2.2rem]">
+              <div className="flex min-w-0 flex-col justify-center leading-none">
+                <span className="whitespace-nowrap font-display text-[0.82rem] font-extrabold uppercase tracking-[0.08em] text-[var(--gold)] drop-shadow-[0_3px_10px_rgba(255,215,0,0.35)] sm:text-xl sm:tracking-[0.14em] lg:text-[2.2rem]">
                   THE ELITE CLUB
                 </span>
               </div>

@@ -22,19 +22,6 @@ export function Footer() {
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 py-16">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
               {/* Brand Column */}
-              <div>
-                <img
-                  src={logoImg}
-                  alt="The Elite Club Logo"
-                  className="w-28 h-28 sm:w-36 sm:h-36 rounded-full border-[3px] border-[var(--gold)] object-cover mb-4 shadow-[0_0_35px_rgba(255,215,0,0.35)]"
-                />
-                <h3 className="text-2xl sm:text-3xl font-extrabold gold-text font-display tracking-[0.14em] uppercase mb-4 drop-shadow-[0_2px_10px_rgba(255,215,0,0.3)]">
-                  THE ELITE CLUB
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Goa&apos;s largest and most iconic offshore casino experience on the Mandovi River.
-                </p>
-              </div>
 
               {/* Useful Links */}
               <div>
