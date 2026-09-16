@@ -50,6 +50,7 @@ export type Casino = {
   slug: string;
   name: string;
   location: string;
+  mapUrl: string;
   short: string;
   full: string;
   image: string;
@@ -61,7 +62,8 @@ export const casinos: Casino[] = [
   {
     slug: "casino-gold",
     name: "Casino Gold",
-    location: "",
+    location: "Candolim, Goa",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Casino+Gold+Candolim+Goa",
     short: "A premium offshore casino in Goa offering a lively gaming experience with a variety of casino games, entertainment, dining, and nightlife.",
     full: "A premium offshore casino in Goa offering a lively gaming experience with a variety of casino games, entertainment, dining, and nightlife.",
     image: casinoGold,
@@ -70,7 +72,8 @@ export const casinos: Casino[] = [
   {
     slug: "casino-pride",
     name: "Casino Pride",
-    location: "",
+    location: "Panaji, Goa",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Casino+Pride+Panaji+Goa",
     short: "A popular offshore casino in Goa known for its vibrant atmosphere, wide range of gaming options, live entertainment, and dining facilities.",
     full: "A popular offshore casino in Goa known for its vibrant atmosphere, wide range of gaming options, live entertainment, and dining facilities.",
     image: casinoPride,
@@ -79,7 +82,8 @@ export const casinos: Casino[] = [
   {
     slug: "casino-rivers",
     name: "Casino Rivers",
-    location: "",
+    location: "Patto, Panaji, Goa",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Casino+Rivers+Patto+Panaji+Goa",
     short: "A modern offshore casino in Goa offering an exciting gaming environment along with entertainment, dining, and a premium casino experience.",
     full: "A modern offshore casino in Goa offering an exciting gaming environment along with entertainment, dining, and a premium casino experience.",
     image: casinoRivers,
@@ -88,7 +92,8 @@ export const casinos: Casino[] = [
   {
     slug: "ocean-7",
     name: "Ocean 7",
-    location: "",
+    location: "Candolim, Goa",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Ocean+7+Candolim+Goa",
     short: "A well-known offshore casino in Goa that provides a stylish gaming experience with multiple casino games, entertainment, and onboard dining.",
     full: "A well-known offshore casino in Goa that provides a stylish gaming experience with multiple casino games, entertainment, and onboard dining.",
     image: ocean7Casino,
@@ -97,20 +102,12 @@ export const casinos: Casino[] = [
   {
     slug: "big-daddy",
     name: "Big Daddy Casino",
-    location: "",
+    location: "Patto, Panaji, Goa",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Big+Daddy+Casino+Patto+Panaji+Goa",
     short: "One of Goa’s prominent offshore casinos, offering a luxurious casino experience with various games, entertainment, dining, and nightlife.",
     full: "One of Goa’s prominent offshore casinos, offering a luxurious casino experience with various games, entertainment, dining, and nightlife.",
     image: bigDaddy,
     gallery: [bigDaddy, dining1, casinoGold],
-  },
-  {
-    slug: "elite-club-casino",
-    name: "The Elite Club",
-    location: "",
-    short: "The signature luxury gaming experience, blending premium hospitality with iconic river views.",
-    full: "The signature luxury gaming experience, blending premium hospitality with iconic river views.",
-    image: casinoGold,
-    gallery: [casinoGold, gameSlots, ocean7Casino],
   },
 ];
 

@@ -66,6 +66,22 @@ function CasinoPage() {
                   alt={casino.name}
                   title={casino.name}
                   text={casino.short}
+                  footer={
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-start gap-2 text-sm text-muted-foreground min-w-0 flex-1">
+                        <MapPin size={16} className="mt-0.5 shrink-0 text-[var(--gold)]" />
+                        <span className="truncate">{casino.location}</span>
+                      </div>
+                      <a
+                        href={casino.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center rounded-md border border-[var(--gold)]/30 bg-[var(--gold)]/5 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.12em] text-[var(--gold)] transition-colors hover:bg-[var(--gold)]/10"
+                      >
+                        Map
+                      </a>
+                    </div>
+                  }
                 />
               </RevealItem>
             ))}

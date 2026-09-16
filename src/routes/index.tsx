@@ -9,11 +9,12 @@ import {
   Sparkles,
 } from "lucide-react";
 import { site, stats } from "@/lib/site";
-import { games as gamesData } from "@/lib/data";
+import { casinos, games as gamesData } from "@/lib/data";
 import { GameAnimation } from "@/components/site/GameAnimation";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTAAnchor } from "@/components/site/CTAButton";
+import { PremiumCard } from "@/components/site/PremiumCard";
 import logoImg from "@/assets/logo.jpg";
 
 export const Route = createFileRoute("/")({
@@ -217,24 +218,40 @@ function Index() {
       <section className="section-py gradient-section" id="about-section">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="About Us"
+            eyebrow="Our Venues"
             title="About Our Casino"
-            subtitle="Exciting games. Captivating performances. Exquisite dining. At The Elite Club Casino, every visit becomes an unforgettable offshore casino experience in Goa where thrilling gaming, vibrant entertainment, and fine cuisine come together seamlessly."
+            subtitle="Step aboard and explore our signature casino floors — each with its own character, atmosphere, and promise of an extraordinary evening."
             as="h2"
           />
 
-          <Reveal delay={0.2}>
-            <div className="mt-12 video-wrapper max-w-4xl mx-auto">
-              <video
-                src="https://www.majesticpride.in/media/casino-video.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full"
-              />
-            </div>
-          </Reveal>
+          <RevealGroup className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {casinos.map((casino) => (
+              <RevealItem key={casino.slug}>
+                <PremiumCard
+                  image={casino.image}
+                  alt={casino.name}
+                  title={casino.name}
+                  text={casino.short}
+                  footer={
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-start gap-2 text-sm text-muted-foreground min-w-0 flex-1">
+                        <MapPin size={16} className="mt-0.5 shrink-0 text-[var(--gold)]" />
+                        <span className="truncate">{casino.location}</span>
+                      </div>
+                      <a
+                        href={casino.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center rounded-md border border-[var(--gold)]/30 bg-[var(--gold)]/5 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.12em] text-[var(--gold)] transition-colors hover:bg-[var(--gold)]/10"
+                      >
+                        Map
+                      </a>
+                    </div>
+                  }
+                />
+              </RevealItem>
+            ))}
+          </RevealGroup>
         </div>
       </section>
 

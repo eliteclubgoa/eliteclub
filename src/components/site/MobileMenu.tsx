@@ -38,19 +38,7 @@ export function MobileMenu({
             className="fixed top-0 right-0 z-[70] h-full w-[85%] max-w-[360px] bg-[#111113] border-l border-[var(--border)] shadow-2xl overflow-y-auto"
           >
             {/* Close Button */}
-            <div className="flex items-center justify-between px-6 py-5">
-              <div className="flex items-center gap-3">
-                <img
-                  src={logoImg}
-                  alt="The Elite Club Logo"
-                  className="h-16 w-16 rounded-full border-2 border-[var(--gold)] object-cover shadow-[0_0_25px_rgba(255,215,0,0.3)] flex-shrink-0"
-                />
-                <div className="flex flex-col leading-tight">
-                  <span className="text-base sm:text-lg font-extrabold gold-text font-display tracking-[0.14em] uppercase">
-                    THE ELITE CLUB
-                  </span>
-                </div>
-              </div>
+            <div className="flex items-center justify-end px-6 py-5">
               <button
                 onClick={onClose}
                 className="flex items-center justify-center w-9 h-9 rounded-full border border-[var(--border)] text-muted-foreground hover:text-[var(--gold)] hover:border-[var(--gold)]/30 transition-all"

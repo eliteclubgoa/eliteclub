@@ -41,19 +41,15 @@ export function Header() {
               className="group flex min-w-0 shrink items-center gap-2 sm:gap-3 md:gap-5"
               id="header-logo"
             >
-              <div className="relative flex-shrink-0">
-                <span className="absolute inset-[-18%] rounded-full bg-[radial-gradient(circle,_rgba(255,215,0,0.5),_rgba(255,215,0,0.2)_50%,_transparent_75%)] blur-[28px]" />
+              <div className="relative z-10 flex-shrink-0">
+                <span className="absolute inset-[-12%] -z-10 rounded-[18px] bg-[radial-gradient(circle,_rgba(255,215,0,0.38),_rgba(255,215,0,0.18)_50%,_transparent_75%)] blur-[22px]" />
                 <img
                   src={logoImg}
                   alt="The Elite Club Logo"
-                  className="relative h-14 w-14 rounded-full border-[3px] border-[var(--gold)] object-cover shadow-[0_0_35px_rgba(255,215,0,0.42)] transition-transform duration-300 group-hover:scale-105 sm:h-20 sm:w-20 lg:h-28 lg:w-28"
+                  className="relative h-[4.25rem] w-[4.25rem] rounded-[20px] border border-[var(--gold)]/70 bg-transparent object-contain shadow-[0_0_35px_rgba(255,215,0,0.3)] transition-transform duration-300 group-hover:scale-105 sm:h-20 sm:w-20 lg:h-28 lg:w-28"
                 />
               </div>
-              <div className="flex min-w-0 flex-col justify-center leading-none">
-                <span className="whitespace-nowrap font-display text-[0.82rem] font-extrabold uppercase tracking-[0.08em] text-[var(--gold)] drop-shadow-[0_3px_10px_rgba(255,215,0,0.35)] sm:text-xl sm:tracking-[0.14em] lg:text-[2.2rem]">
-                  THE ELITE CLUB
-                </span>
-              </div>
+
             </Link>
 
             <nav className="hidden xl:flex items-center gap-2 lg:gap-4" id="desktop-nav">
