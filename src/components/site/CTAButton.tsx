@@ -5,11 +5,11 @@ import { cn } from "@/lib/utils";
 type Variant = "primary" | "outline" | "ghost";
 
 const base =
-  "group relative inline-flex min-h-11 items-center justify-center gap-2 overflow-hidden px-7 py-3 text-[0.7rem] font-medium uppercase tracking-[0.24em] transition-colors duration-500 disabled:cursor-not-allowed disabled:opacity-60";
+  "group relative inline-flex min-h-11 items-center justify-center gap-2 overflow-hidden rounded-sm px-7 py-3 text-[0.7rem] font-medium uppercase tracking-[0.24em] shadow-[0_12px_30px_rgba(0,0,0,0.18)] transition-all duration-500 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-accent text-accent-foreground hover:bg-foreground hover:text-background",
+    "bg-[linear-gradient(135deg,var(--gold-light),var(--gold),var(--gold-dark))] text-accent-foreground hover:shadow-[0_14px_35px_rgba(231,185,85,0.22)]",
   outline:
     "border border-hairline text-foreground hover:border-accent hover:text-accent",
   ghost: "text-muted-foreground hover:text-accent",

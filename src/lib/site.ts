@@ -33,7 +33,7 @@ export const navLinks = [
   { to: "/", label: "Home" },
   { to: "/casino", label: "Casino" },
   { to: "/games", label: "Games" },
-  { to: "/hotels", label: "Hotels" },
+  { to: "/plans", label: "Our Plans" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact Us" },
 ] as const;
@@ -48,7 +48,7 @@ export const footerUseful = [
   { to: "/", label: "Home Page" },
   { to: "/casino", label: "Casino" },
   { to: "/games", label: "Games" },
-  { to: "/hotels", label: "Hotels" },
+  { to: "/plans", label: "Our Plans" },
   { to: "/gallery", label: "Gallery" },
 ] as const;
 

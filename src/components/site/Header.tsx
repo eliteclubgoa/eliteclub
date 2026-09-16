@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
-import { site, navLinks, externalLinks } from "@/lib/site";
+import { navLinks, externalLinks } from "@/lib/site";
 import { CTAAnchor } from "./CTAButton";
 import { MobileMenu } from "./MobileMenu";
 
@@ -42,22 +42,21 @@ export function Header() {
               id="header-logo"
             >
               <div className="relative z-10 flex-shrink-0">
-                <span className="absolute inset-[-12%] -z-10 rounded-[18px] bg-[radial-gradient(circle,_rgba(255,215,0,0.38),_rgba(255,215,0,0.18)_50%,_transparent_75%)] blur-[22px]" />
                 <img
                   src={logoImg}
                   alt="The Elite Club Logo"
-                  className="relative h-[4.25rem] w-[4.25rem] rounded-[20px] border border-[var(--gold)]/70 bg-transparent object-contain shadow-[0_0_35px_rgba(255,215,0,0.3)] transition-transform duration-300 group-hover:scale-105 sm:h-20 sm:w-20 lg:h-28 lg:w-28"
+                  className="relative h-[5.75rem] w-[6rem] rounded-[20px] bg-transparent object-contain ring-1 ring-inset ring-[var(--gold)]/40 shadow-[inset_0_0_7px_rgba(255,215,0,0.35)] transition-transform duration-300 group-hover:scale-105 sm:h-20 sm:w-[5.75rem] lg:h-28 lg:w-[7.75rem]"
                 />
               </div>
 
             </Link>
 
-            <nav className="hidden xl:flex items-center gap-2 lg:gap-4" id="desktop-nav">
+            <nav className="hidden xl:flex items-center gap-3 2xl:gap-5" id="desktop-nav">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`relative px-2.5 py-2 text-[0.82rem] font-medium tracking-wide transition-colors duration-300 hover:text-[var(--gold)] ${
+                  className={`relative px-3 py-2.5 text-[0.95rem] font-medium tracking-wide transition-colors duration-300 hover:text-[var(--gold)] ${
                     currentPath === link.to
                       ? "text-[var(--gold)]"
                       : "text-foreground/80"
@@ -75,7 +74,7 @@ export function Header() {
                   href={link.href}
                   target={link.target}
                   rel="noopener noreferrer"
-                  className="px-2.5 py-2 text-[0.82rem] font-medium tracking-wide text-foreground/80 transition-colors duration-300 hover:text-[var(--gold)]"
+                  className="px-3 py-2.5 text-[0.95rem] font-medium tracking-wide text-foreground/80 transition-colors duration-300 hover:text-[var(--gold)]"
                 >
                   {link.label}
                 </a>
@@ -85,7 +84,7 @@ export function Header() {
             <div className="flex items-center gap-3">
               <CTAAnchor
                 href="/contact"
-                className="hidden md:inline-flex !bg-[var(--gold)] !px-6 !py-3 !text-[0.7rem] !font-bold !tracking-[0.08em]"
+                className="hidden md:inline-flex !bg-[var(--gold)] !px-6 !py-3 !text-[0.7rem] !font-bold !tracking-[0.08em] xl:!px-7 xl:!py-3.5 xl:!text-[0.82rem]"
                 id="header-contact-btn"
               >
                 CONTACT US

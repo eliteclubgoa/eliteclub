@@ -18,7 +18,7 @@ export const Route = createFileRoute("/contact")({
   }),
 });
 
-function ContactPage() {
+export function ContactPage() {
   const [formData, setFormData] = useState({
     full_name: "",
     email: "",
@@ -263,21 +263,6 @@ function ContactPage() {
                     </p>
                   )}
                 </form>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Map Embed */}
-          <div className="mt-16 max-w-5xl mx-auto">
-            <Reveal>
-              <div className="map-container">
-                <iframe
-                  src={site.mapEmbed}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="The Elite Club Casino Map"
-                />
               </div>
             </Reveal>
           </div>

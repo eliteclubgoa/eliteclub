@@ -19,7 +19,7 @@ export const Route = createFileRoute("/games")({
   }),
 });
 
-function GamesPage() {
+export function GamesPage() {
   const categories = ["All", ...new Set(games.map((game) => game.category))];
   const [active, setActive] = useState("All");
   const filteredGames = games.filter((game) => {

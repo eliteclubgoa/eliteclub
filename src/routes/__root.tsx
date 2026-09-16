@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import logoImg from "../assets/logo.png";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
@@ -139,7 +140,7 @@ export const Route = createRootRouteWithContext<{
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: logoImg, type: "image/png" },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
@@ -163,7 +164,7 @@ export const Route = createRootRouteWithContext<{
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <HeadContent />
       </head>

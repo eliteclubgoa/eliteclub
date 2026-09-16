@@ -16,7 +16,7 @@ import { Route as CommunityGuidelinesRouteImport } from './routes/community-guid
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GamesRouteImport } from './routes/games'
-import { Route as HotelsRouteImport } from './routes/hotels'
+import { Route as PlansRouteImport } from './routes/plans'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as TermsRouteImport } from './routes/terms'
 
@@ -55,9 +55,9 @@ const GamesRoute = GamesRouteImport.update({
   path: '/games',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HotelsRoute = HotelsRouteImport.update({
-  id: '/hotels',
-  path: '/hotels',
+const PlansRoute = PlansRouteImport.update({
+  id: '/plans',
+  path: '/plans',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -79,7 +79,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/games': typeof GamesRoute
-  '/hotels': typeof HotelsRoute
+  '/plans': typeof PlansRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms': typeof TermsRoute
 }
@@ -91,7 +91,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/games': typeof GamesRoute
-  '/hotels': typeof HotelsRoute
+  '/plans': typeof PlansRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms': typeof TermsRoute
 }
@@ -104,7 +104,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/games': typeof GamesRoute
-  '/hotels': typeof HotelsRoute
+  '/plans': typeof PlansRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms': typeof TermsRoute
 }
@@ -118,7 +118,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/games'
-    | '/hotels'
+    | '/plans'
     | '/privacy-policy'
     | '/terms'
   fileRoutesByTo: FileRoutesByTo
@@ -130,7 +130,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/games'
-    | '/hotels'
+    | '/plans'
     | '/privacy-policy'
     | '/terms'
   id:
@@ -142,7 +142,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/gallery'
     | '/games'
-    | '/hotels'
+    | '/plans'
     | '/privacy-policy'
     | '/terms'
   fileRoutesById: FileRoutesById
@@ -155,7 +155,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
   GamesRoute: typeof GamesRoute
-  HotelsRoute: typeof HotelsRoute
+  PlansRoute: typeof PlansRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   TermsRoute: typeof TermsRoute
 }
@@ -211,11 +211,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GamesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/hotels': {
-      id: '/hotels'
-      path: '/hotels'
-      fullPath: '/hotels'
-      preLoaderRoute: typeof HotelsRouteImport
+    '/plans': {
+      id: '/plans'
+      path: '/plans'
+      fullPath: '/plans'
+      preLoaderRoute: typeof PlansRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -243,7 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
   GamesRoute: GamesRoute,
-  HotelsRoute: HotelsRoute,
+  PlansRoute: PlansRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   TermsRoute: TermsRoute,
 }

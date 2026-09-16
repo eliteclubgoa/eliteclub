@@ -1,9 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { galleryItems } from "@/lib/data";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
 import { Sparkles, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import casino from "@/assets/gallery/casino.jpeg";
+import casino10 from "@/assets/gallery/casino_10.jpeg";
+import casino2 from "@/assets/gallery/casino_2.webp";
+import casino4 from "@/assets/gallery/casino_4.avif";
+import casino5Jpeg from "@/assets/gallery/casino_5.jpeg";
+import casino5Webp from "@/assets/gallery/casino_5.webp";
+import casino6 from "@/assets/gallery/casino_6.jpeg";
+import casino7 from "@/assets/gallery/casino_7.webp";
+import casino9 from "@/assets/gallery/casino_9.webp";
+import enterJpeg from "@/assets/gallery/enter.jpeg";
+import enterPng from "@/assets/gallery/enter.png";
+import food from "@/assets/gallery/food.webp";
+import food2 from "@/assets/gallery/food_2.webp";
+import food3 from "@/assets/gallery/food_3.webp";
+
+const galleryItems = [
+  { src: casino, alt: "Casino floor", category: "Games" },
+  { src: casino10, alt: "Casino floor with warm lighting", category: "Games" },
+  { src: casino2, alt: "Casino interior", category: "Games" },
+  { src: casino4, alt: "Luxury casino lounge", category: "Games" },
+  { src: casino5Jpeg, alt: "Casino table setting", category: "Games" },
+  { src: casino5Webp, alt: "Premium casino atmosphere", category: "Games" },
+  { src: casino6, alt: "Casino gaming floor", category: "Games" },
+  { src: casino7, alt: "Casino gaming tables", category: "Games" },
+  { src: casino9, alt: "Casino interior with premium styling", category: "Games" },
+  { src: enterJpeg, alt: "Live entertainment", category: "Entertainment" },
+  { src: enterPng, alt: "Entertainment atmosphere", category: "Entertainment" },
+  { src: food, alt: "Premium dining experience", category: "Dining" },
+  { src: food2, alt: "Luxury dining presentation", category: "Dining" },
+  { src: food3, alt: "Gourmet food presentation", category: "Dining" },
+] as const;
 
 export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
@@ -19,7 +49,7 @@ export const Route = createFileRoute("/gallery")({
   }),
 });
 
-function GalleryPage() {
+export function GalleryPage() {
   const categories = [
     "All",
     ...new Set(galleryItems.map((g) => g.category)),

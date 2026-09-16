@@ -6,7 +6,6 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { CTAAnchor } from "@/components/site/CTAButton";
 import { PremiumCard } from "@/components/site/PremiumCard";
 import { MapPin, Sparkles } from "lucide-react";
-import heroCasino from "@/assets/casino/casino pride.png";
 
 export const Route = createFileRoute("/casino")({
   component: CasinoPage,
@@ -22,19 +21,11 @@ export const Route = createFileRoute("/casino")({
   }),
 });
 
-function CasinoPage() {
+export function CasinoPage() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center gradient-hero">
-        <div className="absolute inset-0">
-          <img
-            src={heroCasino}
-            alt="The Elite Club Casino Interior"
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0D] via-[#0C0C0D]/80 to-transparent" />
-        </div>
         <div className="relative mx-auto max-w-[1400px] w-full px-4 sm:px-6 lg:px-8 pt-32 pb-16">
           <Reveal>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--gold)]/20 bg-[var(--gold)]/5 mb-6">
@@ -86,23 +77,6 @@ function CasinoPage() {
               </RevealItem>
             ))}
           </RevealGroup>
-
-          <Reveal delay={0.3} className="text-center mt-16">
-            <h2 className="text-2xl sm:text-3xl font-display font-bold text-foreground mb-4">
-              Ready to Experience the{" "}
-              <span className="gold-text">Luxury?</span>
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-              Book your visit and discover why The Elite Club is among the
-              best casinos in Goa.
-            </p>
-            <CTAAnchor
-              href="/contact"
-              id="casino-contact-btn"
-            >
-              CONTACT US
-            </CTAAnchor>
-          </Reveal>
         </div>
       </section>
     </div>

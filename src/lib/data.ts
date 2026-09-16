@@ -1,4 +1,3 @@
-import heroCasino from "@/assets/hero-casino.jpg";
 import casinoGold from "@/assets/casino/casino gold.webp";
 import casinoPride from "@/assets/casino/casino pride.png";
 import casinoRivers from "@/assets/casino/casino rivers.webp";
@@ -7,17 +6,17 @@ import bigDaddy from "@/assets/casino/big-daddy.webp";
 import hotel1 from "@/assets/hotel-1.jpg";
 import hotel2 from "@/assets/hotel-2.jpg";
 import hotel3 from "@/assets/hotel-3.jpg";
-import gameRoulette from "@/assets/game-roulette.jpg";
-import gameBaccarat from "@/assets/game-baccarat.jpg";
-import gameBlackjack from "@/assets/game-blackjack.jpg";
-import gameTeenPatti from "@/assets/game-teenpatti.jpg";
-import gamePoker from "@/assets/game-poker.jpg";
-import gameSlots from "@/assets/game-slots.jpg";
-import gameAndarBahar from "@/assets/game-andarbahar.jpg";
-import dining1 from "@/assets/dining-1.jpg";
-import entertainment1 from "@/assets/entertainment-1.jpg";
-import galleryAmericanRoulette from "@/assets/gallery/american_roul.jpeg";
-import galleryCasino10 from "@/assets/gallery/casino_10.jpeg";
+import gameRoulette from "@/assets/gallery/casino_6.jpeg";
+import gameBaccarat from "@/assets/gallery/casino_7.webp";
+import gameBlackjack from "@/assets/gallery/casino_9.webp";
+import gameTeenPatti from "@/assets/gallery/casino_5.jpeg";
+import gamePoker from "@/assets/gallery/food.webp";
+import gameSlots from "@/assets/gallery/food_2.webp";
+import gameAndarBahar from "@/assets/gallery/enter.jpeg";
+import dining1 from "@/assets/gallery/food_3.webp";
+import entertainment1 from "@/assets/gallery/enter.png";
+import galleryAmericanRoulette from "@/assets/gallery/casino_6.jpeg";
+import galleryCasino10 from "@/assets/gallery/casino_2.webp";
 import galleryCasino2 from "@/assets/gallery/casino_2.webp";
 import galleryCasino4 from "@/assets/gallery/casino_4.avif";
 import galleryCasino5Jpeg from "@/assets/gallery/casino_5.jpeg";
@@ -32,7 +31,7 @@ import galleryFood2 from "@/assets/gallery/food_2.webp";
 import galleryFood3 from "@/assets/gallery/food_3.webp";
 
 export const images = {
-  heroCasino,
+  heroCasino: casinoPride,
   mandoviRoom: casinoGold,
   vessel: casinoPride,
   atrium: casinoRivers,
