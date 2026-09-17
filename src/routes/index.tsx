@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Sparkles } from "lucide-react";
 import { site, stats } from "@/lib/site";
 import { CTAAnchor } from "@/components/site/CTAButton";
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { CasinoPage } from "./casino";
 import { GamesPage } from "./games";
 import { PlansPage } from "./plans";
@@ -115,7 +116,11 @@ function Index() {
                 rel="noopener noreferrer"
                 variant="outline"
                 id="hero-whatsapp-us"
+                aria-label="Contact us on WhatsApp"
+                title="Contact us on WhatsApp"
+                className="!px-5"
               >
+                <WhatsAppIcon size={20} className="shrink-0" />
                 WHATSAPP US
               </CTAAnchor>
             </div>

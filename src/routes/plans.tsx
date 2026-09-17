@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { site } from "@/lib/site";
 import { Reveal } from "@/components/site/Reveal";
 import { CTAAnchor } from "@/components/site/CTAButton";
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import {
   Check,
-  MessageCircle,
   Sparkles,
   Users,
   Coins,
@@ -45,9 +45,9 @@ type Package = {
 };
 
 const packages: Package[] = [
-  { name: "Classic", tag: "Essential", price: "₹50,000", entries: "2 Persons", chips: "₹50,000", hotel: "Not Included" },
-  { name: "Premium", tag: "Most Popular", price: "₹1,00,000", entries: "3 Persons", chips: "₹1,00,000", hotel: "3 Star" },
-  { name: "Elite", tag: "Signature", price: "₹2,00,000", entries: "6 Persons", chips: "₹2,00,000", hotel: "3 Star", highlight: true },
+  { name: "Classic", tag: "Essential", price: " 50,000", entries: "2 Persons", chips: " 50,000", hotel: "Not Included" },
+  { name: "Premium", tag: "Most Popular", price: " 1,00,000", entries: "3 Persons", chips: " 1,00,000", hotel: "3 Star" },
+  { name: "Elite", tag: "Signature", price: " 2,00,000", entries: "6 Persons", chips: " 2,00,000", hotel: "3 Star", highlight: true },
 ];
 
 const rows: { label: string; icon: LucideIcon; values: (string | boolean)[] }[] = [
@@ -72,9 +72,16 @@ const DEFAULT_ENQUIRY = "Hi The Elite Club Casino, I want to enquire about your 
 /** Reusable "chat on WhatsApp" button so every CTA looks and behaves the same. */
 function WhatsAppCTA({ message = DEFAULT_ENQUIRY, className = "" }: { message?: string; className?: string }) {
   return (
-    <CTAAnchor href={waLink(message)} target="_blank" rel="noopener noreferrer" className={`gap-2 ${className}`}>
-      <MessageCircle size={15} />
-      Enquire Now
+    <CTAAnchor
+      href={waLink(message)}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Enquire on WhatsApp"
+      title="Enquire on WhatsApp"
+      className={`w-fit gap-2 !border-black !bg-black !bg-none !px-3 !text-white hover:!border-black hover:!bg-black ${className}`}
+    >
+      <WhatsAppIcon size={20} className="shrink-0" />
+      WHATSAPP US
     </CTAAnchor>
   );
 }
@@ -114,59 +121,59 @@ export function PlansPage() {
                   Comparison of Classic, Premium, and Elite packages
                 </caption>
                 <thead>
-                  <tr className="border-b border-[var(--gold)]/25 bg-[var(--gold)]/[0.04]">
-                    <th scope="col" className="w-[28%] px-5 py-6 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:px-8">
-                      Inclusions
+  <tr className="border-b border-[var(--gold)]/25 bg-[var(--gold)]/[0.04]">
+    <th scope="col" className="w-[28%] px-5 py-6 text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:px-8">
+      Inclusions
+    </th>
+    {packages.map((plan) => (
+      <th
+        key={plan.name}
+        scope="col"
+        className={`relative px-5 py-6 sm:px-8 ${plan.highlight ? "bg-[var(--gold)]/[0.08]" : ""}`}
+      >
+        {plan.highlight && <span className="absolute inset-x-0 top-0 h-0.5 bg-[var(--gold)]" />}
+        <span className="block text-sm font-medium uppercase tracking-[0.2em] text-[var(--gold)]">
+          {plan.tag}
+        </span>
+        <span className="mt-2 block font-display text-3xl font-semibold text-foreground sm:text-4xl">
+          {plan.name}
+        </span>
+      </th>
+    ))}
+  </tr>
+              </thead>
+              <tbody>
+                {rows.map((row, rowIndex) => (
+                  <tr key={row.label} className="border-b border-[var(--border)] last:border-b-0">
+                    <th scope="row" className="px-5 py-5 text-base font-semibold text-foreground sm:px-8">
+                      <span className="flex items-center gap-2.5">
+                        <row.icon size={16} className="text-[var(--gold)]" />
+                        {row.label}
+                      </span>
                     </th>
-                    {packages.map((plan) => (
-                      <th
-                        key={plan.name}
-                        scope="col"
-                        className={`relative px-5 py-6 sm:px-8 ${plan.highlight ? "bg-[var(--gold)]/[0.08]" : ""}`}
-                      >
-                        {plan.highlight && <span className="absolute inset-x-0 top-0 h-0.5 bg-[var(--gold)]" />}
-                        <span className="block text-xs font-medium uppercase tracking-[0.2em] text-[var(--gold)]">
-                          {plan.tag}
-                        </span>
-                        <span className="mt-2 block font-display text-2xl font-semibold text-foreground sm:text-3xl">
-                          {plan.name}
-                        </span>
-                      </th>
-                    ))}
+                    {row.values.map((value, index) => {
+                      const plan = packages[index];
+                      return (
+                        <td
+                          key={`${row.label}-${index}`}
+                          className={`px-5 py-5 text-base text-foreground/75 sm:px-8 ${plan?.highlight ? "bg-[var(--gold)]/[0.04]" : ""} ${rowIndex === 0 ? "font-display text-xl font-semibold text-[var(--gold)]" : ""}`}
+                        >
+                          {value === true ? (
+                            <span
+                              className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[var(--gold)]/45 bg-[var(--gold)]/10 text-[var(--gold)]"
+                              aria-label="Included"
+                            >
+                              <Check size={14} strokeWidth={2.5} />
+                            </span>
+                          ) : (
+                            value
+                          )}
+                        </td>
+                      );
+                    })}
                   </tr>
-                </thead>
-                <tbody>
-                  {rows.map((row, rowIndex) => (
-                    <tr key={row.label} className="border-b border-[var(--border)] last:border-b-0">
-                      <th scope="row" className="px-5 py-5 text-sm font-semibold text-foreground sm:px-8">
-                        <span className="flex items-center gap-2.5">
-                          <row.icon size={15} className="text-[var(--gold)]" />
-                          {row.label}
-                        </span>
-                      </th>
-                      {row.values.map((value, index) => {
-                        const plan = packages[index];
-                        return (
-                          <td
-                            key={`${row.label}-${index}`}
-                            className={`px-5 py-5 text-sm text-foreground/75 sm:px-8 ${plan?.highlight ? "bg-[var(--gold)]/[0.04]" : ""} ${rowIndex === 0 ? "font-display text-lg font-semibold text-[var(--gold)]" : ""}`}
-                          >
-                            {value === true ? (
-                              <span
-                                className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[var(--gold)]/45 bg-[var(--gold)]/10 text-[var(--gold)]"
-                                aria-label="Included"
-                              >
-                                <Check size={14} strokeWidth={2.5} />
-                              </span>
-                            ) : (
-                              value
-                            )}
-                          </td>
-                        );
-                      })}
-                    </tr>
-                  ))}
-                </tbody>
+                ))}
+              </tbody>
                 <tfoot>
                   <tr>
                     <td />
@@ -174,7 +181,7 @@ export function PlansPage() {
                       <td key={plan.name} className={`px-5 py-6 sm:px-8 ${plan.highlight ? "bg-[var(--gold)]/[0.04]" : ""}`}>
                         <WhatsAppCTA
                           message={`Hi The Elite Club Casino, I want to enquire about the ${plan.name} package.`}
-                          className="w-full justify-center"
+                          className="justify-center"
                         />
                       </td>
                     ))}
@@ -227,7 +234,7 @@ export function PlansPage() {
 
                   <WhatsAppCTA
                     message={`Hi The Elite Club Casino, I want to enquire about the ${plan.name} package.`}
-                    className="mt-5 w-full justify-center"
+                    className="mt-5 justify-center"
                   />
                 </article>
               ))}
