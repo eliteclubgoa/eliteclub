@@ -82,7 +82,7 @@ function Index() {
       {/* ============================================================ */}
       {/*  HERO BANNER                                                  */}
       {/* ============================================================ */}
-      <section className="gradient-hero relative isolate overflow-hidden border-b border-[var(--border)] pt-40 pb-16 sm:pt-44 lg:pt-48" id="hero-section">
+      <section className="gradient-hero relative isolate overflow-hidden border-b border-[var(--border)] pt-28 pb-8 sm:pt-32 lg:pt-36" id="hero-section">
         <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -90,13 +90,6 @@ function Index() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="mx-auto max-w-4xl text-center"
           >
-            <div className="hero-kicker mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/25 bg-[var(--gold)]/5 px-4 py-1.5">
-              <Sparkles size={14} className="text-[var(--gold)]" />
-              <span className="text-xs font-medium uppercase tracking-wider text-[var(--gold)]">
-                The Elite Club
-              </span>
-            </div>
-
             <h1 className="hero-title mb-4 font-display text-4xl font-bold text-foreground sm:text-5xl lg:text-7xl">
               Goa&apos;s Best &amp; <span className="gold-text">Most Iconic</span>
               <br className="hidden sm:block" /> Offshore Casino Experience

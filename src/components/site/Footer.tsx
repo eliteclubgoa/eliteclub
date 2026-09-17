@@ -98,9 +98,6 @@ export function Footer() {
                       {site.email}
                     </a>
                   </li>
-                  <li className="text-sm text-muted-foreground leading-relaxed">
-                    {site.addressShort}
-                  </li>
                   <li>
                     <a
                       href={site.phoneHref}
@@ -120,7 +117,7 @@ export function Footer() {
             <p className="text-center text-xs text-muted-foreground">
               Copyright © 2026{" "}
               <Link to="/" className="text-[var(--gold)] hover:underline">
-                Golden Peace Infrastructure Private Limited.
+                The Elite Club
               </Link>{" "}
               All Rights Reserved
             </p>

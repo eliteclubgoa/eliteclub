@@ -10,7 +10,6 @@ export const site = {
   email: "info@theeliteclub.in",
   address:
     "The Elite Club Jetty, River Mandovi, Near District And Sessions Court, Panaji, Goa 403001",
-  addressShort: "The Elite Club Jetty, River Mandovi, Panaji, Goa 403001",
   bookingUrl: "https://bookings.majesticpride.in/app/booking",
   agentPortalUrl: "https://agentportal.majesticpride.in/agent",
   hotelUrl: "https://www.neomajestic.com/",
@@ -60,7 +59,7 @@ export const footerLegal = [
 
 export const stats = [
   { value: 100, suffix: "+", label: "Casino games" },
-  { value: 3, suffix: "", label: "Decks of gaming" },
+  { value: 3, suffix: "+", label: "Decks of gaming" },
   { value: 24, suffix: "/7", label: "Open for guests" },
   { value: 10, suffix: "+", label: "Years of excellence" },
 ] as const;

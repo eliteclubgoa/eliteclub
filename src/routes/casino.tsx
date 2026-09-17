@@ -25,15 +25,9 @@ export function CasinoPage() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center gradient-hero">
-        <div className="relative mx-auto max-w-[1400px] w-full px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+      <section className="relative min-h-[20vh] flex items-center gradient-hero pt-28 sm:pt-30 lg:pt-32">
+        <div className="relative mx-auto max-w-[1400px] w-full px-4 sm:px-6 lg:px-8 pb-6">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--gold)]/20 bg-[var(--gold)]/5 mb-6">
-              <Sparkles size={14} className="text-[var(--gold)]" />
-              <span className="text-xs font-medium text-[var(--gold)] tracking-wider uppercase">
-                Our Venues
-              </span>
-            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-foreground mb-4">
               The <span className="gold-text">Casino</span>
             </h1>

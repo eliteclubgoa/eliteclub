@@ -110,17 +110,7 @@ export function MobileMenu({
             </div>
 
             {/* Contact Info */}
-            <div className="px-6 pb-8">
-              <p className="text-xs text-muted-foreground mb-2">
-                {site.addressShort}
-              </p>
-              <a
-                href={site.phoneHref}
-                className="text-sm font-semibold text-[var(--gold)]"
-              >
-                {site.phone}
-              </a>
-            </div>
+            <div className="px-6 pb-8" />
           </motion.div>
         </>
       )}

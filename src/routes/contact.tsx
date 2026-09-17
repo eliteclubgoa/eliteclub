@@ -57,15 +57,9 @@ export function ContactPage() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="gradient-hero pt-40 pb-16 sm:pt-44 lg:pt-48">
+      <section className="gradient-hero pt-28 pb-16 sm:pt-32 lg:pt-36">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--gold)]/20 bg-[var(--gold)]/5 mb-6">
-              <Sparkles size={14} className="text-[var(--gold)]" />
-              <span className="text-xs font-medium text-[var(--gold)] tracking-wider uppercase">
-                Get In Touch
-              </span>
-            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-foreground mb-4">
               Contact <span className="gold-text">The Elite Club</span>
             </h1>
@@ -83,30 +77,7 @@ export function ContactPage() {
             {/* Left Info */}
             <Reveal>
               <div className="space-y-8">
-                <div>
-                  <h2 className="text-2xl font-bold font-display text-foreground mb-3">
-                    Headquarters &amp; Jetty Location
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Our feeder boats board continuously from The Elite Club Jetty, River Mandovi, Near District And Sessions Court, Panaji, Goa 403001.
-                  </p>
-                </div>
-
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center shrink-0 text-[var(--gold)]">
-                      <MapPin size={22} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-foreground mb-1 uppercase tracking-wider">
-                        Address
-                      </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {site.address}
-                      </p>
-                    </div>
-                  </div>
-
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center shrink-0 text-[var(--gold)]">
                       <Phone size={22} />

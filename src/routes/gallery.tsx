@@ -65,15 +65,9 @@ export function GalleryPage() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="gradient-hero pt-40 pb-16 sm:pt-44 lg:pt-48">
+      <section className="gradient-hero pt-28 pb-8 sm:pt-32 lg:pt-36">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--gold)]/20 bg-[var(--gold)]/5 mb-6">
-              <Sparkles size={14} className="text-[var(--gold)]" />
-              <span className="text-xs font-medium text-[var(--gold)] tracking-wider uppercase">
-                Photo Gallery
-              </span>
-            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-foreground mb-4">
               Our <span className="gold-text">Gallery</span>
             </h1>

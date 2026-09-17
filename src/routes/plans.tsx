@@ -78,7 +78,7 @@ function WhatsAppCTA({ message = DEFAULT_ENQUIRY, className = "" }: { message?: 
       rel="noopener noreferrer"
       aria-label="Enquire on WhatsApp"
       title="Enquire on WhatsApp"
-      className={`w-fit gap-2 !border-black !bg-black !bg-none !px-3 !text-white hover:!border-black hover:!bg-black ${className}`}
+      className={`mx-auto w-full max-w-[220px] gap-2 !border-black !bg-black !bg-none !px-3 !text-white hover:!border-black hover:!bg-black sm:w-fit ${className}`}
     >
       <WhatsAppIcon size={20} className="shrink-0" />
       WHATSAPP US
@@ -92,15 +92,9 @@ export function PlansPage() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="gradient-hero pt-40 pb-16 sm:pt-44 lg:pt-48">
+      <section className="gradient-hero pt-28 pb-16 sm:pt-32 lg:pt-36">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--gold)]/20 bg-[var(--gold)]/5 mb-6">
-              <Sparkles size={14} className="text-[var(--gold)]" />
-              <span className="text-xs font-medium text-[var(--gold)] tracking-wider uppercase">
-                Best Plans
-              </span>
-            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-foreground mb-4 max-w-3xl">
               Premium <span className="gold-text">Membership Plans</span>
             </h1>
@@ -232,10 +226,12 @@ export function PlansPage() {
                     })}
                   </div>
 
-                  <WhatsAppCTA
-                    message={`Hi The Elite Club Casino, I want to enquire about the ${plan.name} package.`}
-                    className="mt-5 justify-center"
-                  />
+                  <div className="mt-5 flex justify-center">
+                    <WhatsAppCTA
+                      message={`Hi The Elite Club Casino, I want to enquire about the ${plan.name} package.`}
+                      className="justify-center"
+                    />
+                  </div>
                 </article>
               ))}
             </div>

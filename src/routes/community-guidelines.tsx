@@ -12,7 +12,7 @@ export const Route = createFileRoute("/community-guidelines")({
 
 function CommunityPage() {
   return (
-    <div className="overflow-x-hidden pt-32 pb-24">
+    <div className="overflow-x-hidden pt-20 pb-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <h1 className="text-3xl sm:text-4xl font-bold font-display text-foreground mb-6">
