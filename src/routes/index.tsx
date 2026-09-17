@@ -2,7 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Sparkles } from "lucide-react";
+import casinoVideo from "@/assets/video/casino.MP4";
 import { site, stats } from "@/lib/site";
+import { Reveal } from "@/components/site/Reveal";
 import { CTAAnchor } from "@/components/site/CTAButton";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { CasinoPage } from "./casino";
@@ -130,6 +132,27 @@ function Index() {
                 label={stat.label}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative border-b border-[var(--border)] bg-background/80 py-12 sm:py-16">
+        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <h1 className="mb-6 text-4xl font-bold font-display text-foreground sm:text-5xl lg:text-6xl">
+              About <span className="gold-text">THE ELITE CLUB</span>
+            </h1>
+          </Reveal>
+
+          <div className="overflow-hidden rounded-[28px] border border-[var(--border)] bg-black/40 shadow-[0_24px_80px_rgba(0,0,0,0.35)] p-2 sm:p-3">
+            <video
+              src={casinoVideo}
+              className="block w-full rounded-[20px] object-contain"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
           </div>
         </div>
       </section>

@@ -1,11 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { casinos } from "@/lib/data";
-import { site } from "@/lib/site";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
-import { SectionHeading } from "@/components/site/SectionHeading";
-import { CTAAnchor } from "@/components/site/CTAButton";
 import { PremiumCard } from "@/components/site/PremiumCard";
-import { MapPin, Sparkles } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export const Route = createFileRoute("/casino")({
   component: CasinoPage,
@@ -31,6 +28,7 @@ export function CasinoPage() {
               The <span className="gold-text">Casino</span>
             </h1>
           </Reveal>
+
           <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {casinos.map((casino) => (
               <RevealItem key={casino.slug}>
