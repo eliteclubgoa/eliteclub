@@ -19,6 +19,27 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const el = document.getElementById("site-header");
+    if (!el) return;
+
+    const syncHeaderHeight = () => {
+      document.documentElement.style.setProperty(
+        "--header-height",
+        `${el.offsetHeight}px`,
+      );
+    };
+
+    syncHeaderHeight();
+    const observer = new ResizeObserver(syncHeaderHeight);
+    observer.observe(el);
+    window.addEventListener("resize", syncHeaderHeight);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", syncHeaderHeight);
+    };
+  }, []);
+
   // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
@@ -28,14 +49,14 @@ export function Header() {
     <>
       <header
         id="site-header"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)]/60 transition-[background-color,box-shadow] duration-500 ${
           scrolled
-            ? "bg-[#0C0C0D]/95 backdrop-blur-xl shadow-[0_2px_40px_rgba(0,0,0,0.5)] py-2"
-            : "bg-[#0C0C0D]/80 backdrop-blur-sm py-3"
+            ? "bg-[#0C0C0D]/95 backdrop-blur-xl shadow-[0_2px_40px_rgba(0,0,0,0.5)]"
+            : "bg-[#0C0C0D]/90 backdrop-blur-sm"
         }`}
       >
         <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex h-[5.25rem] items-center justify-between gap-4 sm:h-[5.75rem] lg:h-[6.5rem]">
             <Link
               to="/"
               className="group flex min-w-0 shrink items-center gap-2 sm:gap-3 md:gap-5"
@@ -45,7 +66,7 @@ export function Header() {
                 <img
                   src={logoImg}
                   alt="The Elite Club Logo"
-                  className="relative h-[5.75rem] w-[6rem] rounded-[20px] bg-transparent object-contain ring-1 ring-inset ring-[var(--gold)]/40 shadow-[inset_0_0_7px_rgba(255,215,0,0.35)] transition-transform duration-300 group-hover:scale-105 sm:h-20 sm:w-[5.75rem] lg:h-28 lg:w-[7.75rem]"
+                  className="relative h-16 w-[4.5rem] rounded-[16px] bg-transparent object-contain ring-1 ring-inset ring-[var(--gold)]/40 shadow-[inset_0_0_7px_rgba(255,215,0,0.35)] transition-transform duration-300 group-hover:scale-105 sm:h-[4.5rem] sm:w-[5.25rem] lg:h-[5.25rem] lg:w-[6.25rem]"
                 />
               </div>
 

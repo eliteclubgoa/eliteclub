@@ -2,8 +2,7 @@
 export const site = {
   name: "The Elite Club Casino",
   tagline: "Goa's Largest & Most Iconic Offshore Casino Experience",
-  description:
-    "Sail into refined luxury on the Mandovi River and discover why The Elite Club Casino is among the best casinos in Goa, where premium gaming, fine dining, and exceptional hospitality come together effortlessly.",
+  description: "",
   phone: "+91 81608 08737",
   phoneHref: "https://wa.me/918160808737",
   whatsapp: "918160808737",

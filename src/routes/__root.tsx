@@ -19,7 +19,7 @@ function NotFoundComponent() {
   return (
     <>
       <Header />
-      <div className="flex min-h-screen items-center justify-center bg-background px-4 pt-24">
+      <div className="flex min-h-screen items-center justify-center bg-background px-4 pt-[calc(var(--header-height)+2rem)]">
         <div className="max-w-md text-center">
           <h1 className="text-7xl font-bold gold-text font-display">404</h1>
           <h2 className="mt-4 text-xl font-semibold text-foreground">
@@ -182,7 +182,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Header />
-      <main>
+      <main className="pt-[var(--header-height)]">
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </main>

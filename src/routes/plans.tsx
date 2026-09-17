@@ -91,23 +91,13 @@ function WhatsAppCTA({ message = DEFAULT_ENQUIRY, className = "" }: { message?: 
 export function PlansPage() {
   return (
     <div className="overflow-x-hidden">
-      {/* Hero */}
-      <section className="gradient-hero pt-28 pb-16 sm:pt-32 lg:pt-36">
+      <section className="page-section gradient-hero">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-foreground mb-4 max-w-3xl">
-              Premium <span className="gold-text">Membership Plans</span>
+            <h1 className="mb-6 text-4xl font-bold font-display text-foreground sm:text-5xl lg:text-6xl">
+              Our <span className="gold-text">Plans</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              Choose from our exclusive premium packages, crafted for luxurious stays, VIP casino access, and an unforgettable Goan getaway
-            </p>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Comparison table — the one place plan details live */}
-      <section className="section-py border-t border-[var(--border)]">
-        <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="hidden overflow-x-auto rounded-[1.25rem] border border-[var(--gold)]/20 bg-[var(--surface)] shadow-[0_24px_80px_rgba(0,0,0,0.28)] md:block">
               <table className="w-full min-w-[760px] border-collapse text-left">

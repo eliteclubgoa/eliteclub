@@ -82,7 +82,7 @@ function Index() {
       {/* ============================================================ */}
       {/*  HERO BANNER                                                  */}
       {/* ============================================================ */}
-      <section className="gradient-hero relative isolate overflow-hidden border-b border-[var(--border)] pt-28 pb-8 sm:pt-32 lg:pt-36" id="hero-section">
+      <section className="gradient-hero relative isolate overflow-hidden border-b border-[var(--border)] pt-10 pb-10 sm:pt-12 sm:pb-12 lg:pt-14 lg:pb-14" id="hero-section">
         <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -95,9 +95,11 @@ function Index() {
               <br className="hidden sm:block" /> Offshore Casino Experience
             </h1>
 
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-              {site.description}
-            </p>
+            {site.description && (
+              <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
+                {site.description}
+              </p>
+            )}
 
             <div className="flex flex-wrap justify-center gap-4">
               <CTAAnchor href="/contact" id="hero-contact-us">

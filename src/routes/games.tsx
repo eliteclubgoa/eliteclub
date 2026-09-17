@@ -28,25 +28,14 @@ export function GamesPage() {
 
   return (
     <div className="overflow-x-hidden">
-      {/* Hero */}
-      <section className="gradient-hero pt-28 pb-8 sm:pt-32 lg:pt-36">
+      <section className="page-section gradient-hero">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-foreground mb-4">
+            <h1 className="mb-6 text-4xl font-bold font-display text-foreground sm:text-5xl lg:text-6xl">
               Our <span className="gold-text">Games</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              From classic table games to cutting-edge electronic gaming, find
-              your perfect play on our floors.
-            </p>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Games Grid */}
-      <section className="section-py">
-        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-          <Reveal className="flex flex-wrap gap-3 mb-12 justify-center">
+          <Reveal className="mb-6 flex flex-wrap justify-center gap-3">
             <div className="flex flex-wrap gap-3 justify-center">
               {categories.map((category) => (
                 <button

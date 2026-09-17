@@ -56,24 +56,14 @@ export function ContactPage() {
 
   return (
     <div className="overflow-x-hidden">
-      {/* Hero */}
-      <section className="gradient-hero pt-28 pb-16 sm:pt-32 lg:pt-36">
+      <section className="page-section gradient-hero">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-foreground mb-4">
+            <h1 className="mb-6 text-4xl font-bold font-display text-foreground sm:text-5xl lg:text-6xl">
               Contact <span className="gold-text">The Elite Club</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              We are available 24/7 to assist with your bookings, group reservations, VIP lounge access, and general inquiries.
-            </p>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Main Form & Info Section */}
-      <section className="section-py">
-        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 lg:grid-cols-2">
             {/* Left Info */}
             <Reveal>
               <div className="space-y-8">

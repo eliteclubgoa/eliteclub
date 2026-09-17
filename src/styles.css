@@ -101,6 +101,19 @@
   --gold: #E7B955;
   --gold-dark: #9C6C26;
   --gold-light: #FFE7A3;
+  --header-height: 5.25rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-height: 5.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 6.5rem;
+  }
 }
 
 @layer base {
@@ -122,7 +135,7 @@
   }
 
   section[id] {
-    scroll-margin-top: 7.2rem;
+    scroll-margin-top: calc(var(--header-height) + 1rem);
   }
 
   h1,
@@ -444,13 +457,23 @@
 
 /* Section container */
 .section-py {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.75rem;
 }
 
-@media (max-width: 768px) {
+.page-section {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 1024px) {
   .section-py {
     padding-top: 3rem;
+    padding-bottom: 3.25rem;
+  }
+
+  .page-section {
+    padding-top: 1.75rem;
     padding-bottom: 3rem;
   }
 }

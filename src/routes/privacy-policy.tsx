@@ -12,7 +12,7 @@ export const Route = createFileRoute("/privacy-policy")({
 
 function PrivacyPage() {
   return (
-    <div className="overflow-x-hidden pt-20 pb-16">
+    <div className="overflow-x-hidden pt-10 pb-16 sm:pt-12 lg:pt-14">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <h1 className="text-3xl sm:text-4xl font-bold font-display text-foreground mb-6">

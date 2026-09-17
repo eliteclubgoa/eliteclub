@@ -24,25 +24,13 @@ export const Route = createFileRoute("/casino")({
 export function CasinoPage() {
   return (
     <div className="overflow-x-hidden">
-      {/* Hero */}
-      <section className="relative min-h-[20vh] flex items-center gradient-hero pt-28 sm:pt-30 lg:pt-32">
-        <div className="relative mx-auto max-w-[1400px] w-full px-4 sm:px-6 lg:px-8 pb-6">
+      <section className="page-section gradient-hero">
+        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-foreground mb-4">
+            <h1 className="mb-6 text-4xl font-bold font-display text-foreground sm:text-5xl lg:text-6xl">
               The <span className="gold-text">Casino</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              Step aboard and explore our signature casino floors — each with
-              its own character, atmosphere, and promise of an extraordinary
-              evening.
-            </p>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Casino Venues Grid */}
-      <section className="section-py">
-        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {casinos.map((casino) => (
               <RevealItem key={casino.slug}>
