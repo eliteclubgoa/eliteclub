@@ -101,18 +101,18 @@
   --gold: #E7B955;
   --gold-dark: #9C6C26;
   --gold-light: #FFE7A3;
-  --header-height: 4.5rem;
+  --header-height: 6.72rem;
 }
 
 @media (min-width: 640px) {
   :root {
-    --header-height: 5.75rem;
+    --header-height: 7.36rem;
   }
 }
 
 @media (min-width: 1024px) {
   :root {
-    --header-height: 6.5rem;
+    --header-height: 8.32rem;
   }
 }
 

@@ -55,21 +55,18 @@ export function Header() {
             : "bg-[#0C0C0D]/90 backdrop-blur-sm"
         }`}
       >
-        <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
-          <div className="flex h-[4.5rem] items-center justify-between gap-3 sm:h-[5.75rem] sm:gap-4 lg:h-[6.5rem]">
+        <div className="mx-auto max-w-[1600px] px-3 sm:px-6 lg:px-8">
+          <div className="flex h-[6.72rem] items-center justify-between gap-2 sm:h-[7.36rem] sm:gap-4 lg:h-[8.32rem]">
             <Link
               to="/"
-              className="group flex min-w-0 shrink items-center gap-2 sm:gap-3 md:gap-5"
+              className="group flex h-full shrink-0 items-center py-1.5 sm:py-2"
               id="header-logo"
             >
-              <div className="relative z-10 flex-shrink-0">
-                <img
-                  src={logoImg}
-                  alt="The Elite Club Logo"
-                  className="relative h-[5.4rem] w-[5.4rem] rounded-[12px] bg-transparent object-contain ring-1 ring-inset ring-[var(--gold)]/40 shadow-[inset_0_0_7px_rgba(255,215,0,0.35)] transition-transform duration-300 group-hover:scale-105 sm:h-[5.25rem] sm:w-[6.25rem] sm:rounded-[16px] lg:h-[6.25rem] lg:w-[7.25rem]"
-                />
-              </div>
-
+              <img
+                src={logoImg}
+                alt="The Elite Club Logo"
+                className="h-full w-auto rounded-[10px] object-contain ring-1 ring-inset ring-[var(--gold)]/35 transition-transform duration-300 group-hover:scale-[1.03] sm:rounded-[12px]"
+              />
             </Link>
 
             <nav className="hidden xl:flex items-center gap-3 2xl:gap-5" id="desktop-nav">
@@ -112,11 +109,11 @@ export function Header() {
               </CTAAnchor>
               <button
                 onClick={() => setMobileOpen(true)}
-                className="xl:hidden flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--border)] text-foreground/80 transition-all hover:border-[var(--gold)]/30 hover:text-[var(--gold)]"
+                className="xl:hidden flex h-12 w-12 items-center justify-center rounded-lg border border-[var(--border)] text-foreground/80 transition-all hover:border-[var(--gold)]/30 hover:text-[var(--gold)]"
                 aria-label="Open menu"
                 id="mobile-menu-toggle"
               >
-                <Menu size={20} />
+                <Menu size={22} />
               </button>
             </div>
           </div>
