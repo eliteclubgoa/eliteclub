@@ -66,7 +66,7 @@ export function Header() {
                 <img
                   src={logoImg}
                   alt="The Elite Club Logo"
-                  className="relative h-14 w-[4.4rem] rounded-[12px] bg-transparent object-contain ring-1 ring-inset ring-[var(--gold)]/40 shadow-[inset_0_0_7px_rgba(255,215,0,0.35)] transition-transform duration-300 group-hover:scale-105 sm:h-[4.5rem] sm:w-[5.25rem] sm:rounded-[16px] lg:h-[5.25rem] lg:w-[6.25rem]"
+                  className="relative h-[5.4rem] w-[5.4rem] rounded-[12px] bg-transparent object-contain ring-1 ring-inset ring-[var(--gold)]/40 shadow-[inset_0_0_7px_rgba(255,215,0,0.35)] transition-transform duration-300 group-hover:scale-105 sm:h-[5.25rem] sm:w-[6.25rem] sm:rounded-[16px] lg:h-[6.25rem] lg:w-[7.25rem]"
                 />
               </div>
 
