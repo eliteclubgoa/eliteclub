@@ -42,6 +42,7 @@ export function Footer() {
                       <li key={link.label}>
                         <Link
                           to={"to" in link ? link.to : "/"}
+                          hash={"hash" in link ? link.hash : undefined}
                           className="text-sm text-muted-foreground hover:text-[var(--gold)] transition-colors duration-300"
                         >
                           {link.label}
@@ -90,14 +91,6 @@ export function Footer() {
                   Contact Us
                 </h4>
                 <ul className="space-y-4">
-                  <li>
-                    <a
-                      href={`mailto:${site.email}`}
-                      className="text-sm text-muted-foreground hover:text-[var(--gold)] underline underline-offset-2 transition-colors duration-300"
-                    >
-                      {site.email}
-                    </a>
-                  </li>
                   <li>
                     <a
                       href={site.phoneHref}

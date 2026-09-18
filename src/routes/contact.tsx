@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, useCallback } from "react";
 import { site } from "@/lib/site";
 import { Reveal } from "@/components/site/Reveal";
-import { MapPin, Phone, Mail, Clock, Sparkles } from "lucide-react";
+import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
+import { MapPin, Phone, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -85,22 +86,6 @@ export function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center shrink-0 text-[var(--gold)]">
-                      <Mail size={22} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-foreground mb-1 uppercase tracking-wider">
-                        Email Support
-                      </h4>
-                      <a
-                        href={`mailto:${site.email}`}
-                        className="text-sm text-muted-foreground hover:text-[var(--gold)] underline underline-offset-2"
-                      >
-                        {site.email}
-                      </a>
-                    </div>
-                  </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center shrink-0 text-[var(--gold)]">
@@ -114,6 +99,32 @@ export function ContactPage() {
                         Open 24 Hours / 7 Days a Week
                       </p>
                     </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center shrink-0 text-[var(--gold)]">
+                      <MapPin size={22} />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-foreground mb-1 uppercase tracking-wider">
+                        Boarding Point
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Fisheries Jetty, Panjim. Open 24 hours / 7 days a week.
+                      </p>
+                      <p className="mt-2 text-sm text-muted-foreground">
+                        Pre-purchased booking check-in: 9:00 a.m. to 11:59 p.m.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5">
+                    <h4 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wider">
+                      Valet Parking
+                    </h4>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      Available at the Panjim boarding point from 6:30 p.m. to 6:30 a.m., subject to driver and parking-space availability. Valet is for confirmed bookings and eligible private four-wheelers only, at the vehicle owner&apos;s risk.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -213,9 +224,10 @@ export function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-lg bg-[var(--gold)] text-[#0C0C0D] text-sm font-semibold tracking-wider uppercase hover:bg-[var(--gold-light)] transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.3)]"
+                    className="w-full py-3.5 rounded-lg bg-[var(--gold)] text-[#0C0C0D] text-sm font-semibold tracking-wider uppercase hover:bg-[var(--gold-light)] transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,215,0,0.3)] flex items-center justify-center gap-2"
                   >
-                    SEND ENQUIRY
+                    <WhatsAppIcon size={18} className="drop-shadow-sm" />
+                    WhatsApp Us
                   </button>
 
                   {formStatus === "success" && (

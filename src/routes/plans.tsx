@@ -54,7 +54,7 @@ const rows: { label: string; icon: LucideIcon; values: (string | boolean)[] }[] 
   { label: "Price", icon: Coins, values: packages.map((p) => p.price) },
   { label: "Entries", icon: Users, values: packages.map((p) => p.entries) },
   { label: "Playing Chips", icon: Coins, values: packages.map((p) => p.chips) },
-  { label: "Unlimited Drinks", icon: Wine, values: packages.map(() => "House Brands Liquor") },
+  { label: "Unlimited Drinks", icon: Wine, values: packages.map(() => "Package-specific brands") },
   { label: "Unlimited Food", icon: UtensilsCrossed, values: packages.map(() => true) },
   { label: "Live Entertainment", icon: Music4, values: packages.map(() => true) },
   { label: "Pickup & Drop", icon: CarFront, values: packages.map(() => true) },
@@ -97,6 +97,9 @@ export function PlansPage() {
             <h1 className="mb-6 text-4xl font-bold font-display text-foreground sm:text-5xl lg:text-6xl">
               Our <span className="gold-text">Plans</span>
             </h1>
+            <p className="mb-8 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              All packages include the same offerings. They differ only in the brands of drinks available, so choose the package that matches your preferred alcohol brands.
+            </p>
           </Reveal>
           <Reveal>
             <div className="hidden overflow-x-auto rounded-[1.25rem] border border-[var(--gold)]/20 bg-[var(--surface)] shadow-[0_24px_80px_rgba(0,0,0,0.28)] md:block">

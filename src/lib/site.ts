@@ -51,9 +51,10 @@ export const footerUseful = [
 ] as const;
 
 export const footerLegal = [
+  { to: "/important-information", label: "Important Information" },
   { to: "/terms", label: "Terms & Conditions" },
-  { to: "/privacy-policy", label: "Privacy Policy" },
-  { to: "/community-guidelines", label: "Community Guidelines" },
+  { to: "/otpc-terms", label: "OTPC Terms & Conditions" },
+  { to: "/refund-cancellation", label: "Refund & Cancellation" },
 ] as const;
 
 export const stats = [

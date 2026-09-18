@@ -12,12 +12,13 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as CasinoRouteImport } from './routes/casino'
-import { Route as CommunityGuidelinesRouteImport } from './routes/community-guidelines'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GamesRouteImport } from './routes/games'
+import { Route as ImportantInformationRouteImport } from './routes/important-information'
+import { Route as OtpcTermsRouteImport } from './routes/otpc-terms'
 import { Route as PlansRouteImport } from './routes/plans'
-import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as RefundCancellationRouteImport } from './routes/refund-cancellation'
 import { Route as TermsRouteImport } from './routes/terms'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,11 +36,6 @@ const CasinoRoute = CasinoRouteImport.update({
   path: '/casino',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CommunityGuidelinesRoute = CommunityGuidelinesRouteImport.update({
-  id: '/community-guidelines',
-  path: '/community-guidelines',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -55,14 +51,24 @@ const GamesRoute = GamesRouteImport.update({
   path: '/games',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImportantInformationRoute = ImportantInformationRouteImport.update({
+  id: '/important-information',
+  path: '/important-information',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OtpcTermsRoute = OtpcTermsRouteImport.update({
+  id: '/otpc-terms',
+  path: '/otpc-terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlansRoute = PlansRouteImport.update({
   id: '/plans',
   path: '/plans',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
-  id: '/privacy-policy',
-  path: '/privacy-policy',
+const RefundCancellationRoute = RefundCancellationRouteImport.update({
+  id: '/refund-cancellation',
+  path: '/refund-cancellation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -75,24 +81,26 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blogs': typeof BlogsRoute
   '/casino': typeof CasinoRoute
-  '/community-guidelines': typeof CommunityGuidelinesRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/games': typeof GamesRoute
+  '/important-information': typeof ImportantInformationRoute
+  '/otpc-terms': typeof OtpcTermsRoute
   '/plans': typeof PlansRoute
-  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-cancellation': typeof RefundCancellationRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/blogs': typeof BlogsRoute
   '/casino': typeof CasinoRoute
-  '/community-guidelines': typeof CommunityGuidelinesRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/games': typeof GamesRoute
+  '/important-information': typeof ImportantInformationRoute
+  '/otpc-terms': typeof OtpcTermsRoute
   '/plans': typeof PlansRoute
-  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-cancellation': typeof RefundCancellationRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesById {
@@ -100,12 +108,13 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/blogs': typeof BlogsRoute
   '/casino': typeof CasinoRoute
-  '/community-guidelines': typeof CommunityGuidelinesRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/games': typeof GamesRoute
+  '/important-information': typeof ImportantInformationRoute
+  '/otpc-terms': typeof OtpcTermsRoute
   '/plans': typeof PlansRoute
-  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/refund-cancellation': typeof RefundCancellationRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
@@ -114,36 +123,39 @@ export interface FileRouteTypes {
     | '/'
     | '/blogs'
     | '/casino'
-    | '/community-guidelines'
     | '/contact'
     | '/gallery'
     | '/games'
+    | '/important-information'
+    | '/otpc-terms'
     | '/plans'
-    | '/privacy-policy'
+    | '/refund-cancellation'
     | '/terms'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/blogs'
     | '/casino'
-    | '/community-guidelines'
     | '/contact'
     | '/gallery'
     | '/games'
+    | '/important-information'
+    | '/otpc-terms'
     | '/plans'
-    | '/privacy-policy'
+    | '/refund-cancellation'
     | '/terms'
   id:
     | '__root__'
     | '/'
     | '/blogs'
     | '/casino'
-    | '/community-guidelines'
     | '/contact'
     | '/gallery'
     | '/games'
+    | '/important-information'
+    | '/otpc-terms'
     | '/plans'
-    | '/privacy-policy'
+    | '/refund-cancellation'
     | '/terms'
   fileRoutesById: FileRoutesById
 }
@@ -151,12 +163,13 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogsRoute: typeof BlogsRoute
   CasinoRoute: typeof CasinoRoute
-  CommunityGuidelinesRoute: typeof CommunityGuidelinesRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
   GamesRoute: typeof GamesRoute
+  ImportantInformationRoute: typeof ImportantInformationRoute
+  OtpcTermsRoute: typeof OtpcTermsRoute
   PlansRoute: typeof PlansRoute
-  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RefundCancellationRoute: typeof RefundCancellationRoute
   TermsRoute: typeof TermsRoute
 }
 
@@ -183,13 +196,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CasinoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/community-guidelines': {
-      id: '/community-guidelines'
-      path: '/community-guidelines'
-      fullPath: '/community-guidelines'
-      preLoaderRoute: typeof CommunityGuidelinesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -211,6 +217,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GamesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/important-information': {
+      id: '/important-information'
+      path: '/important-information'
+      fullPath: '/important-information'
+      preLoaderRoute: typeof ImportantInformationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/otpc-terms': {
+      id: '/otpc-terms'
+      path: '/otpc-terms'
+      fullPath: '/otpc-terms'
+      preLoaderRoute: typeof OtpcTermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/plans': {
       id: '/plans'
       path: '/plans'
@@ -218,11 +238,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlansRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/privacy-policy': {
-      id: '/privacy-policy'
-      path: '/privacy-policy'
-      fullPath: '/privacy-policy'
-      preLoaderRoute: typeof PrivacyPolicyRouteImport
+    '/refund-cancellation': {
+      id: '/refund-cancellation'
+      path: '/refund-cancellation'
+      fullPath: '/refund-cancellation'
+      preLoaderRoute: typeof RefundCancellationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -239,12 +259,13 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogsRoute: BlogsRoute,
   CasinoRoute: CasinoRoute,
-  CommunityGuidelinesRoute: CommunityGuidelinesRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
   GamesRoute: GamesRoute,
+  ImportantInformationRoute: ImportantInformationRoute,
+  OtpcTermsRoute: OtpcTermsRoute,
   PlansRoute: PlansRoute,
-  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RefundCancellationRoute: RefundCancellationRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport

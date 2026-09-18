@@ -144,10 +144,10 @@ function Index() {
             </h1>
           </Reveal>
 
-          <div className="overflow-hidden rounded-[28px] border border-[var(--border)] bg-black/40 shadow-[0_24px_80px_rgba(0,0,0,0.35)] p-2 sm:p-3">
+          <div className="mx-auto flex aspect-[20/9] w-full max-w-7xl items-center justify-center overflow-hidden rounded-[28px] border border-[var(--border)] bg-black/40 p-2 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:p-3">
             <video
               src={casinoVideo}
-              className="block w-full rounded-[20px] object-contain"
+              className="block h-full w-full rounded-[20px] object-contain"
               autoPlay
               muted
               loop
