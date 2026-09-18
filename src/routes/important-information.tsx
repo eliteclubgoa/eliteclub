@@ -31,7 +31,7 @@ function LegalPage({ title, children }: { title: string; children: ReactNode }) 
     <div className="overflow-x-hidden pt-10 pb-16 sm:pt-12 lg:pt-14">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h1 className="mb-6 text-3xl font-bold font-display text-foreground sm:text-4xl">
+          <h1 className="page-title mb-6 font-bold font-display text-foreground">
             {title}
           </h1>
           <div className="border-t border-[var(--border)] pt-8 text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -47,7 +47,7 @@ function LegalList({ points }: { points: string[] }) {
   return (
     <ul className="list-none space-y-3 pl-0">
       {points.map((point) => (
-        <li key={point} className="before:mr-2 before:text-[var(--gold)] before:content-['➢']">{point}</li>
+        <li key={point} className="relative pl-5 before:absolute before:left-0 before:text-[var(--gold)] before:content-['➢']">{point}</li>
       ))}
     </ul>
   );

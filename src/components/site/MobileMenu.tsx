@@ -35,7 +35,7 @@ export function MobileMenu({
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed top-0 right-0 z-[70] h-full w-[85%] max-w-[360px] bg-[#111113] border-l border-[var(--border)] shadow-2xl overflow-y-auto"
+            className="fixed top-0 right-0 z-[70] h-full w-[min(100%,360px)] bg-[#111113] border-l border-[var(--border)] shadow-2xl overflow-y-auto pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]"
           >
             {/* Close Button */}
             <div className="flex items-center justify-end px-6 py-5">

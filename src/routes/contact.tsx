@@ -60,11 +60,11 @@ export function ContactPage() {
       <section className="page-section gradient-hero">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h1 className="mb-6 text-4xl font-bold font-display text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="page-title mb-6 font-bold font-display text-foreground">
               Contact <span className="gold-text">The Elite Club</span>
             </h1>
           </Reveal>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 lg:grid-cols-2">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
             {/* Left Info */}
             <Reveal>
               <div className="space-y-8">
@@ -79,7 +79,7 @@ export function ContactPage() {
                       </h4>
                       <a
                         href={site.phoneHref}
-                        className="text-lg font-bold text-[var(--gold)] hover:underline"
+                        className="break-words text-lg font-bold text-[var(--gold)] hover:underline"
                       >
                         {site.phone}
                       </a>
@@ -132,7 +132,7 @@ export function ContactPage() {
 
             {/* Right Form */}
             <Reveal delay={0.15}>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8">
+              <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-8">
                 <h3 className="text-xl font-bold font-display text-foreground mb-6">
                   Send Us a Message
                 </h3>

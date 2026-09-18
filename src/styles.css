@@ -101,7 +101,7 @@
   --gold: #E7B955;
   --gold-dark: #9C6C26;
   --gold-light: #FFE7A3;
-  --header-height: 5.25rem;
+  --header-height: 4.5rem;
 }
 
 @media (min-width: 640px) {
@@ -124,6 +124,9 @@
   html {
     scroll-behavior: smooth;
     background-color: var(--color-background);
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
@@ -132,10 +135,19 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    max-width: 100%;
   }
 
-  section[id] {
-    scroll-margin-top: calc(var(--header-height) + 1rem);
+  img,
+  video,
+  iframe,
+  svg {
+    max-width: 100%;
+  }
+
+  section[id],
+  h1 {
+    scroll-margin-top: calc(var(--header-height) + 0.75rem);
   }
 
   h1,
@@ -213,14 +225,20 @@
 }
 
 @utility fluid-display {
-  font-size: clamp(2.6rem, 7vw, 6rem);
-  line-height: 0.98;
+  font-size: clamp(1.85rem, 8vw, 6rem);
+  line-height: 1.08;
   letter-spacing: -0.01em;
 }
 
 @utility fluid-title {
-  font-size: clamp(1.9rem, 4vw, 3.4rem);
-  line-height: 1.06;
+  font-size: clamp(1.55rem, 6.5vw, 3.4rem);
+  line-height: 1.12;
+}
+
+@utility page-title {
+  font-size: clamp(1.7rem, 7.5vw, 3.75rem);
+  line-height: 1.12;
+  overflow-wrap: break-word;
 }
 
 @utility marquee-track {
@@ -317,13 +335,14 @@
 /* Form inputs */
 .form-input {
   width: 100%;
+  max-width: 100%;
   padding: 0.875rem 1rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 0.5rem;
   color: #F5F5F5;
   font-family: var(--font-sans);
-  font-size: 0.875rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
   outline: none;
 }
@@ -462,7 +481,7 @@
 }
 
 .page-section {
-  padding-top: 1.5rem;
+  padding-top: 1.75rem;
   padding-bottom: 2.5rem;
 }
 
@@ -545,6 +564,54 @@
   background: var(--gold);
   color: #0C0C0D;
   border-color: var(--gold);
+}
+
+@media (max-width: 639px) {
+  .eyebrow {
+    letter-spacing: 0.16em;
+    font-size: 0.625rem;
+  }
+
+  .plan-card {
+    padding: 1.25rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.7rem, 8.4vw, 2.35rem);
+    line-height: 1.15;
+  }
+
+  .gallery-filter-btn {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .game-card .game-overlay {
+    padding: 0.875rem;
+  }
+
+  .game-card .game-overlay h3 {
+    font-size: 1.05rem;
+  }
+
+  .game-card .game-overlay p {
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .map-container iframe {
+    height: 240px;
+  }
+
+  .scroll-top-btn {
+    right: max(0.75rem, env(safe-area-inset-right));
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+
+  .form-input {
+    font-size: 16px;
+  }
 }
 
 /* ============================================================

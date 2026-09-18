@@ -19,8 +19,8 @@ export function Footer() {
     <>
       <footer className="relative border-t border-[var(--border)] bg-[#0a0a0c]" id="site-footer">
         <Reveal>
-          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 py-16">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-8 mb-10 sm:mb-12">
               <div>
                 <h4 className="text-sm font-semibold text-foreground mb-5 tracking-wide uppercase">
                   Useful
@@ -94,7 +94,7 @@ export function Footer() {
                   <li>
                     <a
                       href={site.phoneHref}
-                      className="text-lg font-bold text-[var(--gold)] font-display"
+                      className="break-words text-lg font-bold text-[var(--gold)] font-display"
                     >
                       {site.phone}
                     </a>

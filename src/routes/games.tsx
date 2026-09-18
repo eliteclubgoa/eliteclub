@@ -31,7 +31,7 @@ export function GamesPage() {
       <section className="page-section gradient-hero">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h1 className="mb-6 text-4xl font-bold font-display text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="page-title mb-6 font-bold font-display text-foreground">
               Our <span className="gold-text">Games</span>
             </h1>
           </Reveal>
@@ -52,7 +52,7 @@ export function GamesPage() {
           {filteredGames.length > 0 ? (
             <RevealGroup
               key={active}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
             >
             {filteredGames.map((game) => (
               <RevealItem key={game.name}>

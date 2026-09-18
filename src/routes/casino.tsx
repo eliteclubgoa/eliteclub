@@ -24,12 +24,12 @@ export function CasinoPage() {
       <section className="page-section gradient-hero">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h1 className="mb-6 text-4xl font-bold font-display text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="page-title mb-6 font-bold font-display text-foreground">
               The <span className="gold-text">Casino</span>
             </h1>
           </Reveal>
 
-          <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <RevealGroup className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
             {casinos.map((casino) => (
               <RevealItem key={casino.slug}>
                 <PremiumCard
@@ -41,13 +41,13 @@ export function CasinoPage() {
                     <div className="flex items-center justify-between gap-3">
                       <div className="flex items-start gap-2 text-sm text-muted-foreground min-w-0 flex-1">
                         <MapPin size={16} className="mt-0.5 shrink-0 text-[var(--gold)]" />
-                        <span className="truncate">{casino.location}</span>
+                        <span className="break-words">{casino.location}</span>
                       </div>
                       <a
                         href={casino.mapUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-md border border-[var(--gold)]/30 bg-[var(--gold)]/5 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.12em] text-[var(--gold)] transition-colors hover:bg-[var(--gold)]/10"
+                        className="inline-flex shrink-0 items-center justify-center rounded-md border border-[var(--gold)]/30 bg-[var(--gold)]/5 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--gold)] transition-colors hover:bg-[var(--gold)]/10"
                       >
                         Map
                       </a>

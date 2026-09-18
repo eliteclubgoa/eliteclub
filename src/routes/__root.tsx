@@ -95,7 +95,10 @@ export const Route = createRootRouteWithContext<{
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1, viewport-fit=cover",
+      },
       {
         title:
           "Luxurious Offshore Casino in Goa | Cruise Casino in Goa - The Elite Club",
@@ -182,7 +185,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Header />
-      <main className="pt-[var(--header-height)]">
+      <main className="min-w-0 overflow-x-hidden pt-[var(--header-height)]">
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </main>

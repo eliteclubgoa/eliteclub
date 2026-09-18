@@ -49,14 +49,14 @@ export function Header() {
     <>
       <header
         id="site-header"
-        className={`fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)]/60 transition-[background-color,box-shadow] duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)]/60 pt-[env(safe-area-inset-top)] transition-[background-color,box-shadow] duration-500 ${
           scrolled
             ? "bg-[#0C0C0D]/95 backdrop-blur-xl shadow-[0_2px_40px_rgba(0,0,0,0.5)]"
             : "bg-[#0C0C0D]/90 backdrop-blur-sm"
         }`}
       >
         <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
-          <div className="flex h-[5.25rem] items-center justify-between gap-4 sm:h-[5.75rem] lg:h-[6.5rem]">
+          <div className="flex h-[4.5rem] items-center justify-between gap-3 sm:h-[5.75rem] sm:gap-4 lg:h-[6.5rem]">
             <Link
               to="/"
               className="group flex min-w-0 shrink items-center gap-2 sm:gap-3 md:gap-5"
@@ -66,7 +66,7 @@ export function Header() {
                 <img
                   src={logoImg}
                   alt="The Elite Club Logo"
-                  className="relative h-16 w-[4.5rem] rounded-[16px] bg-transparent object-contain ring-1 ring-inset ring-[var(--gold)]/40 shadow-[inset_0_0_7px_rgba(255,215,0,0.35)] transition-transform duration-300 group-hover:scale-105 sm:h-[4.5rem] sm:w-[5.25rem] lg:h-[5.25rem] lg:w-[6.25rem]"
+                  className="relative h-14 w-[4.4rem] rounded-[12px] bg-transparent object-contain ring-1 ring-inset ring-[var(--gold)]/40 shadow-[inset_0_0_7px_rgba(255,215,0,0.35)] transition-transform duration-300 group-hover:scale-105 sm:h-[4.5rem] sm:w-[5.25rem] sm:rounded-[16px] lg:h-[5.25rem] lg:w-[6.25rem]"
                 />
               </div>
 
@@ -112,7 +112,7 @@ export function Header() {
               </CTAAnchor>
               <button
                 onClick={() => setMobileOpen(true)}
-                className="xl:hidden flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] text-foreground/80 transition-all hover:border-[var(--gold)]/30 hover:text-[var(--gold)]"
+                className="xl:hidden flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--border)] text-foreground/80 transition-all hover:border-[var(--gold)]/30 hover:text-[var(--gold)]"
                 aria-label="Open menu"
                 id="mobile-menu-toggle"
               >

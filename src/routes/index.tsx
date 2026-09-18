@@ -92,18 +92,18 @@ function Index() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="mx-auto max-w-4xl text-center"
           >
-            <h1 className="hero-title mb-4 font-display text-4xl font-bold text-foreground sm:text-5xl lg:text-7xl">
+            <h1 className="hero-title page-title mb-4 font-display font-bold text-foreground">
               Goa&apos;s Best &amp; <span className="gold-text">Most Iconic</span>
               <br className="hidden sm:block" /> Offshore Casino Experience
             </h1>
 
             {site.description && (
-              <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
+              <p className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
                 {site.description}
               </p>
             )}
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="mx-auto flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <CTAAnchor href="/contact" id="hero-contact-us">
                 CONTACT US
               </CTAAnchor>
@@ -123,7 +123,7 @@ function Index() {
             </div>
           </motion.div>
 
-          <div className="hero-stats mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-6 border-t border-[var(--border)] pt-8 sm:grid-cols-4">
+          <div className="hero-stats mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-4 border-t border-[var(--border)] pt-8 sm:mt-12 sm:grid-cols-4 sm:gap-6">
             {stats.map((stat) => (
               <AnimatedCounter
                 key={stat.label}
@@ -139,15 +139,15 @@ function Index() {
       <section className="relative border-b border-[var(--border)] bg-background/80 py-12 sm:py-16">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h1 className="mb-6 text-4xl font-bold font-display text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="page-title mb-6 font-bold font-display text-foreground">
               About <span className="gold-text">THE ELITE CLUB</span>
             </h1>
           </Reveal>
 
-          <div className="mx-auto flex aspect-[20/9] w-full max-w-7xl items-center justify-center overflow-hidden rounded-[28px] border border-[var(--border)] bg-black/40 p-2 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:p-3">
+          <div className="mx-auto flex aspect-[4/3] w-full max-w-7xl items-center justify-center overflow-hidden rounded-2xl border border-[var(--border)] bg-black/40 p-1.5 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:aspect-[16/9] sm:rounded-[28px] sm:p-3">
             <video
               src={casinoVideo}
-              className="block h-full w-full rounded-[20px] object-contain"
+              className="block h-full w-full rounded-xl object-contain sm:rounded-[20px]"
               autoPlay
               muted
               loop

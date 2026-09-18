@@ -78,7 +78,7 @@ function WhatsAppCTA({ message = DEFAULT_ENQUIRY, className = "" }: { message?: 
       rel="noopener noreferrer"
       aria-label="Enquire on WhatsApp"
       title="Enquire on WhatsApp"
-      className={`mx-auto w-full max-w-[220px] gap-2 !border-black !bg-black !bg-none !px-3 !text-white hover:!border-black hover:!bg-black sm:w-fit ${className}`}
+      className={`mx-auto w-full max-w-none gap-2 !border-black !bg-black !bg-none !px-3 !text-white hover:!border-black hover:!bg-black sm:w-fit sm:max-w-[240px] ${className}`}
     >
       <WhatsAppIcon size={20} className="shrink-0" />
       WHATSAPP US
@@ -94,7 +94,7 @@ export function PlansPage() {
       <section className="page-section gradient-hero">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h1 className="mb-6 text-4xl font-bold font-display text-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="page-title mb-6 font-bold font-display text-foreground">
               Our <span className="gold-text">Plans</span>
             </h1>
             <p className="mb-8 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -181,7 +181,7 @@ export function PlansPage() {
               {packages.map((plan) => (
                 <article
                   key={plan.name}
-                  className={`relative overflow-hidden rounded-2xl border bg-[var(--surface)] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.24)] ${
+                  className={`relative overflow-hidden rounded-2xl border bg-[var(--surface)] p-4 shadow-[0_18px_50px_rgba(0,0,0,0.24)] sm:p-5 ${
                     plan.highlight
                       ? "border-[var(--gold)]/55"
                       : "border-[var(--border)]"
@@ -190,19 +190,19 @@ export function PlansPage() {
                   {plan.highlight && (
                     <span className="absolute inset-x-0 top-0 h-1 bg-[var(--gold)]" />
                   )}
-                  <div className="mb-5 flex items-start justify-between gap-4">
-                    <div>
+                  <div className="mb-5 flex items-start justify-between gap-3">
+                    <div className="min-w-0">
                       <p className="eyebrow mb-2">{plan.tag}</p>
-                      <h2 className="font-display text-3xl font-semibold text-foreground">
+                      <h2 className="font-display text-2xl font-semibold text-foreground sm:text-3xl">
                         {plan.name}
                       </h2>
                     </div>
-                    <p className="text-right font-display text-xl font-semibold text-[var(--gold)]">
+                    <p className="shrink-0 text-right font-display text-lg font-semibold text-[var(--gold)] sm:text-xl">
                       {plan.price}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-3 border-y border-[var(--border)] py-4">
+                  <div className="grid grid-cols-1 gap-3 border-y border-[var(--border)] py-4 sm:grid-cols-2 sm:gap-x-4">
                     {rows.slice(1).map((row) => {
                       const value = row.values[packages.indexOf(plan)];
                       return (
@@ -211,7 +211,7 @@ export function PlansPage() {
                             <row.icon size={13} className="shrink-0 text-[var(--gold)]" />
                             {row.label}
                           </p>
-                          <p className="truncate text-sm text-foreground/85">
+                          <p className="break-words text-sm leading-snug text-foreground/85">
                             {value === true ? "Included" : value}
                           </p>
                         </div>
