@@ -10,7 +10,8 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import logoImg from "../assets/logo.png";
+import faviconPng from "../assets/favicon.png";
+import logoImg from "../assets/logo.webp";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
@@ -143,7 +144,7 @@ export const Route = createRootRouteWithContext<{
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: logoImg, type: "image/png" },
+      { rel: "icon", href: faviconPng, type: "image/png", sizes: "32x32" },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
@@ -155,9 +156,21 @@ export const Route = createRootRouteWithContext<{
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Manrope:wght@200..800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap",
+        // @ts-expect-error - Valid HTML but missing from TanStack Router types
+        media: "print",
+        onLoad: "this.media='all'",
       },
     ],
+    scripts: [
+      {
+        type: "text/javascript",
+        children: `
+          // Fallback for fonts if JS is disabled
+          document.documentElement.className += " js";
+        `,
+      }
+    ]
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -170,6 +183,12 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en" className="dark">
       <head>
         <HeadContent />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          />
+        </noscript>
       </head>
       <body>
         {children}

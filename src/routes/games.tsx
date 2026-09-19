@@ -3,7 +3,6 @@ import { useState } from "react";
 import { games } from "@/lib/data";
 import { GameAnimation } from "@/components/site/GameAnimation";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
-import { Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/games")({
   component: GamesPage,

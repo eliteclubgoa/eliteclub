@@ -1,17 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, useEffect } from "react";
-import { motion } from "motion/react";
-import { Sparkles } from "lucide-react";
-import casinoVideo from "@/assets/video/casino.MP4";
+import { lazy, Suspense, useState, useEffect, type ComponentType } from "react";
+import { useInView } from "@/hooks/use-in-view";
 import { site, stats } from "@/lib/site";
 import { Reveal } from "@/components/site/Reveal";
 import { CTAAnchor } from "@/components/site/CTAButton";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
-import { CasinoPage } from "./casino";
-import { GamesPage } from "./games";
-import { PlansPage } from "./plans";
-import { GalleryPage } from "./gallery";
-import { ContactPage } from "./contact";
+import { HeroVideo } from "@/components/site/HeroVideo";
+
+const CasinoPage = lazy(() =>
+  import("./casino").then((module) => ({ default: module.CasinoPage })),
+);
+const GamesPage = lazy(() =>
+  import("./games").then((module) => ({ default: module.GamesPage })),
+);
+const PlansPage = lazy(() =>
+  import("./plans").then((module) => ({ default: module.PlansPage })),
+);
+const GalleryPage = lazy(() =>
+  import("./gallery").then((module) => ({ default: module.GalleryPage })),
+);
+const ContactPage = lazy(() =>
+  import("./contact").then((module) => ({ default: module.ContactPage })),
+);
+
+function BelowFold({ Page }: { Page: ComponentType }) {
+  return (
+    <Suspense fallback={<div className="min-h-[32vh]" aria-hidden="true" />}>
+      <Page />
+    </Suspense>
+  );
+}
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -38,7 +56,7 @@ function AnimatedCounter({
   label: string;
 }) {
   const [count, setCount] = useState(0);
-  const [inView, setInView] = useState(false);
+  const [ref, inView] = useInView({ once: true, margin: "0px 0px -50px 0px" });
 
   useEffect(() => {
     if (!inView) return;
@@ -59,10 +77,13 @@ function AnimatedCounter({
   }, [inView, value]);
 
   return (
-    <motion.div
-      className="text-center"
-      onViewportEnter={() => setInView(true)}
-      viewport={{ once: true }}
+    <div
+      ref={ref}
+      className="text-center transition-all duration-700 ease-out"
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0)" : "translateY(20px)",
+      }}
     >
       <div className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display gold-text mb-2">
         {count}
@@ -71,7 +92,7 @@ function AnimatedCounter({
       <p className="text-xs sm:text-sm text-muted-foreground tracking-wide">
         {label}
       </p>
-    </motion.div>
+    </div>
   );
 }
 
@@ -86,12 +107,7 @@ function Index() {
       {/* ============================================================ */}
       <section className="gradient-hero relative isolate overflow-hidden border-b border-[var(--border)] pt-10 pb-10 sm:pt-12 sm:pb-12 lg:pt-14 lg:pb-14" id="hero-section">
         <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mx-auto max-w-4xl text-center"
-          >
+          <Reveal delay={0} y={24} className="mx-auto max-w-4xl text-center">
             <h1 className="hero-title page-title mb-4 font-display font-bold text-foreground">
               Goa&apos;s Best &amp; <span className="gold-text">Most Iconic</span>
               <br className="hidden sm:block" /> Offshore Casino Experience
@@ -121,7 +137,7 @@ function Index() {
                 WHATSAPP US
               </CTAAnchor>
             </div>
-          </motion.div>
+          </Reveal>
 
           <div className="hero-stats mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-4 border-t border-[var(--border)] pt-8 sm:mt-12 sm:grid-cols-4 sm:gap-6">
             {stats.map((stat) => (
@@ -145,23 +161,16 @@ function Index() {
           </Reveal>
 
           <div className="mx-auto flex aspect-[4/3] w-full max-w-7xl items-center justify-center overflow-hidden rounded-2xl border border-[var(--border)] bg-black/40 p-1.5 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:aspect-[16/9] sm:rounded-[28px] sm:p-3">
-            <video
-              src={casinoVideo}
-              className="block h-full w-full rounded-xl object-contain sm:rounded-[20px]"
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
+            <HeroVideo />
           </div>
         </div>
       </section>
 
-      <CasinoPage />
-      <GamesPage />
-      <PlansPage />
-      <GalleryPage />
-      <ContactPage />
+      <BelowFold Page={CasinoPage} />
+      <BelowFold Page={GamesPage} />
+      <BelowFold Page={PlansPage} />
+      <BelowFold Page={GalleryPage} />
+      <BelowFold Page={ContactPage} />
     </div>
   );
 }

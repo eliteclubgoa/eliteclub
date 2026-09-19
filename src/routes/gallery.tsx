@@ -1,19 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/Reveal";
-import { Sparkles, X } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import casino from "@/assets/gallery/casino.jpeg";
-import casino10 from "@/assets/gallery/casino_10.jpeg";
+import { X } from "lucide-react";
+import casino from "@/assets/gallery/casino.webp";
+import casino10 from "@/assets/gallery/casino_10.webp";
 import casino2 from "@/assets/gallery/casino_2.webp";
-import casino4 from "@/assets/gallery/casino_4.avif";
-import casino5Jpeg from "@/assets/gallery/casino_5.jpeg";
+import casino4 from "@/assets/gallery/casino_4.webp";
 import casino5Webp from "@/assets/gallery/casino_5.webp";
-import casino6 from "@/assets/gallery/casino_6.jpeg";
+import casino6 from "@/assets/gallery/casino_6.webp";
 import casino7 from "@/assets/gallery/casino_7.webp";
 import casino9 from "@/assets/gallery/casino_9.webp";
-import enterJpeg from "@/assets/gallery/enter.jpeg";
-import enterPng from "@/assets/gallery/enter.png";
+import enterJpeg from "@/assets/gallery/enter.webp";
+import enterPng from "@/assets/gallery/enter-stage.webp";
 import food from "@/assets/gallery/food.webp";
 import food2 from "@/assets/gallery/food_2.webp";
 import food3 from "@/assets/gallery/food_3.webp";
@@ -23,7 +21,6 @@ const galleryItems = [
   { src: casino10, alt: "Casino floor with warm lighting", category: "Games" },
   { src: casino2, alt: "Casino interior", category: "Games" },
   { src: casino4, alt: "Luxury casino lounge", category: "Games" },
-  { src: casino5Jpeg, alt: "Casino table setting", category: "Games" },
   { src: casino5Webp, alt: "Premium casino atmosphere", category: "Games" },
   { src: casino6, alt: "Casino gaming floor", category: "Games" },
   { src: casino7, alt: "Casino gaming tables", category: "Games" },
@@ -56,6 +53,15 @@ export function GalleryPage() {
   ];
   const [active, setActive] = useState("All");
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const closeLightbox = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setLightbox(null);
+      setIsClosing(false);
+    }, 300);
+  };
 
   const filtered = galleryItems.filter((item) => {
     const matchesCategory = active === "All" || item.category === active;
@@ -104,6 +110,10 @@ export function GalleryPage() {
                       src={item.src}
                       alt={item.alt}
                       loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={600}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0D]/80 via-transparent to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500" />
@@ -126,34 +136,30 @@ export function GalleryPage() {
       </section>
 
       {/* Lightbox */}
-      <AnimatePresence>
-        {lightbox !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4"
-            onClick={() => setLightbox(null)}
+      {lightbox !== null && (
+        <div
+          className={`fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 transition-opacity duration-300 ${
+            isClosing ? "opacity-0" : "opacity-100"
+          }`}
+          onClick={closeLightbox}
+        >
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors sm:top-6 sm:right-6 sm:w-10 sm:h-10"
+            aria-label="Close lightbox"
           >
-            <button
-              onClick={() => setLightbox(null)}
-              className="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors sm:top-6 sm:right-6 sm:w-10 sm:h-10"
-              aria-label="Close lightbox"
-            >
-              <X size={20} />
-            </button>
-            <motion.img
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              src={filtered[lightbox]?.src}
-              alt={filtered[lightbox]?.alt}
-              className="max-w-full max-h-[85vh] object-contain rounded-lg"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <X size={20} />
+          </button>
+          <img
+            src={filtered[lightbox]?.src}
+            alt={filtered[lightbox]?.alt}
+            className={`max-w-full max-h-[85vh] object-contain rounded-lg transition-all duration-300 ${
+              isClosing ? "scale-95 opacity-0" : "scale-100 opacity-100"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }

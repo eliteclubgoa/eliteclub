@@ -5,7 +5,7 @@ import { navLinks, externalLinks } from "@/lib/site";
 import { CTAAnchor } from "./CTAButton";
 import { MobileMenu } from "./MobileMenu";
 
-import logoImg from "@/assets/logo.png";
+import logoImg from "@/assets/logo.webp";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -65,6 +65,10 @@ export function Header() {
               <img
                 src={logoImg}
                 alt="The Elite Club Logo"
+                width={512}
+                height={512}
+                fetchPriority="high"
+                decoding="async"
                 className="h-full w-auto rounded-[10px] object-contain ring-1 ring-inset ring-[var(--gold)]/35 transition-transform duration-300 group-hover:scale-[1.03] sm:rounded-[12px]"
               />
             </Link>

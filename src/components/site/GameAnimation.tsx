@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
+import "../../game-animations.css";
 
 /* ------------------------------------------------------------------
    Realistic casino card / chip / wheel primitives.

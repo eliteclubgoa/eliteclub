@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { SmartImage } from "./SmartImage";
 
 export function PremiumCard({
   image,
@@ -31,10 +32,12 @@ export function PremiumCard({
       <span className="pointer-events-none absolute right-0 bottom-0 h-5 w-5 border-r border-b border-accent/0 transition-colors duration-500 group-hover:border-accent/70" />
 
       <div className={cn("relative overflow-hidden bg-[#0C0C0D]", ratio)}>
-        <img
+        <SmartImage
           src={image}
           alt={alt}
-          loading="lazy"
+          width={800}
+          height={600}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="h-full w-full object-contain p-2 opacity-90 transition-transform duration-[900ms] ease-out group-hover:scale-[1.02] group-hover:opacity-100"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/15 to-transparent" />

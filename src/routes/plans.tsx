@@ -5,7 +5,6 @@ import { CTAAnchor } from "@/components/site/CTAButton";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import {
   Check,
-  Sparkles,
   Users,
   Coins,
   Wine,
@@ -13,8 +12,6 @@ import {
   Music4,
   CarFront,
   BedDouble,
-  ShieldCheck,
-  Star,
   type LucideIcon,
 } from "lucide-react";
 

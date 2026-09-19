@@ -1,10 +1,10 @@
-import { motion } from "motion/react";
-import type { ReactNode } from "react";
+import { type ReactNode, Children, cloneElement, isValidElement } from "react";
+import { useInView } from "@/hooks/use-in-view";
 
 export function Reveal({
   children,
   delay = 0,
-  className,
+  className = "",
   y = 28,
 }: {
   children: ReactNode;
@@ -12,62 +12,69 @@ export function Reveal({
   className?: string;
   y?: number;
 }) {
+  const [ref, inView] = useInView({ once: true, amount: 0.12, margin: "0px 0px -8% 0px" });
+
+  const style = {
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateY(0)" : `translateY(${y}px)`,
+    transition: `opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s`,
+  };
+
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.12, margin: "0px 0px -8% 0px" }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <div ref={ref} className={className} style={style}>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
 export function RevealGroup({
   children,
-  className,
+  className = "",
 }: {
   children: ReactNode;
   className?: string;
 }) {
+  const [ref, inView] = useInView({ once: true, amount: 0.08, margin: "0px 0px -6% 0px" });
+
+  // Pass inView status to children using context or cloning
   return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.08, margin: "0px 0px -6% 0px" }}
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: 0.09 } },
-      }}
-    >
-      {children}
-    </motion.div>
+    <div ref={ref} className={className}>
+      {Children.map(children, (child, index) => {
+        if (isValidElement(child)) {
+          // Calculate staggered delay for children
+          const staggerDelay = index * 0.09;
+          return cloneElement(child, {
+            // @ts-expect-error passing custom props to child
+            "data-in-view": inView,
+            "data-delay": staggerDelay,
+          });
+        }
+        return child;
+      })}
+    </div>
   );
 }
 
 export function RevealItem({
   children,
-  className,
+  className = "",
+  "data-in-view": inView = false,
+  "data-delay": delay = 0,
 }: {
   children: ReactNode;
   className?: string;
+  "data-in-view"?: boolean;
+  "data-delay"?: number;
 }) {
+  const style = {
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateY(0)" : "translateY(26px)",
+    transition: `opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s`,
+  };
+
   return (
-    <motion.div
-      className={className}
-      variants={{
-        hidden: { opacity: 0, y: 26 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
-        },
-      }}
-    >
+    <div className={className} style={style}>
       {children}
-    </motion.div>
+    </div>
   );
 }
