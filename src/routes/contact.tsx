@@ -61,7 +61,7 @@ export function ContactPage() {
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
             <h1 className="page-title mb-6 font-bold font-display text-foreground">
-              Contact <span className="gold-text">The Elite Club</span>
+              JOIN <span className="gold-text">The Elite</span>
             </h1>
           </Reveal>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">

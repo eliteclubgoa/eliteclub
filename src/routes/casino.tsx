@@ -25,7 +25,7 @@ export function CasinoPage() {
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
             <h1 className="page-title mb-6 font-bold font-display text-foreground">
-              The <span className="gold-text">Casino</span>
+              The <span className="gold-text">HOUSE</span>
             </h1>
           </Reveal>
 

@@ -68,7 +68,7 @@ export function GalleryPage() {
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
             <h1 className="page-title mb-6 font-bold font-display text-foreground">
-              Our <span className="gold-text">Gallery</span>
+              THE <span className="gold-text">EXPERIENCE</span>
             </h1>
           </Reveal>
           <Reveal className="mb-6 flex flex-wrap justify-center gap-3">

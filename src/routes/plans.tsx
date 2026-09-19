@@ -95,11 +95,8 @@ export function PlansPage() {
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
             <h1 className="page-title mb-6 font-bold font-display text-foreground">
-              Our <span className="gold-text">Plans</span>
+              THE <span className="gold-text">ELITE PLANS</span>
             </h1>
-            <p className="mb-8 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              All packages include the same offerings. They differ only in the brands of drinks available, so choose the package that matches your preferred alcohol brands.
-            </p>
           </Reveal>
           <Reveal>
             <div className="hidden overflow-x-auto rounded-[1.25rem] border border-[var(--gold)]/20 bg-[var(--surface)] shadow-[0_24px_80px_rgba(0,0,0,0.28)] md:block">

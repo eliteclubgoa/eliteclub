@@ -140,7 +140,7 @@ function Index() {
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
             <h1 className="page-title mb-6 font-bold font-display text-foreground">
-              About <span className="gold-text">THE ELITE CLUB</span>
+              THE <span className="gold-text">ELITE STORY</span>
             </h1>
           </Reveal>
 

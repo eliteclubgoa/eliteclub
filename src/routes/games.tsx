@@ -32,7 +32,7 @@ export function GamesPage() {
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal>
             <h1 className="page-title mb-6 font-bold font-display text-foreground">
-              Our <span className="gold-text">Games</span>
+              THE <span className="gold-text">GAME ROOM</span>
             </h1>
           </Reveal>
           <Reveal className="mb-6 flex flex-wrap justify-center gap-3">
