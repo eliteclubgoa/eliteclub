@@ -1,10 +1,8 @@
-# Majestic Pride Hub
+# The Elite Club
 
-The Majestic Pride Hub is a responsive marketing and booking website for **The Elite Club Casino**, a premium offshore casino experience on the Mandovi River in Panaji, Goa.
+Boooking website for **The Elite Club Casino**, a premium offshore casino experience on the Mandovi River in Panaji, Goa.
 
 The site presents the casino experience, games, package options, gallery, accommodation partners, contact information, and legal information. Calls to action connect visitors to the booking platform or WhatsApp enquiries.
-
-Live brand reference: [majesticpride.in](https://www.majesticpride.in/)
 
 ## Features
 
@@ -151,19 +149,3 @@ npm run preview
 
 Deploy the generated application using a hosting target supported by the Nitro adapter selected by the Vite configuration. Confirm the target's TanStack Start/Nitro instructions before deploying, especially for SSR, external redirects, and the custom `src/server.ts` entry.
 
-## External integrations
-
-The current site links to external services rather than implementing those services locally:
-
-- Booking: `https://bookings.majesticpride.in/app/booking`
-- Agent portal: `https://agentportal.majesticpride.in/agent`
-- Hotel: `https://www.neomajestic.com/`
-- Notice PDF: `https://mpnotice.majesticpride.in/notice.pdf`
-- Packages API reference: `https://bookings.majesticpride.in/api/v1/MPRIDE/packages`
-- WhatsApp: generated from the number in `src/lib/site.ts`
-
-Check these URLs and the business contact details when preparing a release.
-
-## Lovable workflow
-
-This repository is connected to [Lovable](https://lovable.dev). Changes made in Lovable may be committed and synchronized to the connected repository. Keep the branch buildable when making changes, and avoid rewriting published history because that can disrupt the Lovable project history.
