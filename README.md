@@ -4,8 +4,6 @@ Boooking website for **The Elite Club Casino**, a premium offshore casino experi
 
 The site presents the casino experience, games, package options, gallery, accommodation partners, contact information, and legal information. Calls to action connect visitors to the booking platform or WhatsApp enquiries.
 
-Live brand reference: [majesticpride.in](https://www.majesticpride.in/)
-
 ## Features
 
 - Dark, luxury-focused responsive design with Playfair Display and Manrope typography.
