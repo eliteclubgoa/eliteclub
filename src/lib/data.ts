@@ -3,6 +3,7 @@ import casinoPride from "@/assets/casino/casino pride.png";
 import casinoRivers from "@/assets/casino/casino rivers.webp";
 import ocean7Casino from "@/assets/casino/Ocean7.webp";
 import bigDaddy from "@/assets/casino/big-daddy.webp";
+import strikeCasino from "@/assets/casino/strike.jpeg";
 import hotel1 from "@/assets/hotel-1.jpg";
 import hotel2 from "@/assets/hotel-2.jpg";
 import hotel3 from "@/assets/hotel-3.jpg";
@@ -37,6 +38,7 @@ export const images = {
   atrium: casinoRivers,
   terrace: ocean7Casino,
   salon: bigDaddy,
+  strike: strikeCasino,
   galleryFloor: casinoGold,
   hotel1,
   hotel2,
@@ -107,6 +109,16 @@ export const casinos: Casino[] = [
     full: "One of Goa’s prominent offshore casinos, offering a luxurious casino experience with various games, entertainment, dining, and nightlife.",
     image: bigDaddy,
     gallery: [bigDaddy, dining1, casinoGold],
+  },
+  {
+    slug: "strike",
+    name: "Strike",
+    location: "Bambolim, Goa",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Block+No.+4,+North+Wing,+Grand+Hyatt+Goa,+P.O.+Goa+University,+Bambolim,+Goa+403206,+India",
+    short: "A premium casino destination at Grand Hyatt Goa with an elevated gaming experience, luxury ambience, and a memorable night out in Bambolim.",
+    full: "A premium casino destination at Grand Hyatt Goa with an elevated gaming experience, luxury ambience, and a memorable night out in Bambolim.",
+    image: strikeCasino,
+    gallery: [strikeCasino, casinoGold, entertainment1],
   },
 ];
 
