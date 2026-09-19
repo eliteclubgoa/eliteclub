@@ -1,6 +1,6 @@
-# Majestic Pride Hub
+# The Elite Club
 
-The Majestic Pride Hub is a responsive marketing and booking website for **The Elite Club Casino**, a premium offshore casino experience on the Mandovi River in Panaji, Goa.
+Boooking website for **The Elite Club Casino**, a premium offshore casino experience on the Mandovi River in Panaji, Goa.
 
 The site presents the casino experience, games, package options, gallery, accommodation partners, contact information, and legal information. Calls to action connect visitors to the booking platform or WhatsApp enquiries.
 
