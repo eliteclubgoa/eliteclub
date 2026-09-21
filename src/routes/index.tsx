@@ -110,7 +110,7 @@ function Index() {
           <Reveal delay={0} y={24} className="mx-auto max-w-4xl text-center">
             <h1 className="hero-title page-title mb-4 font-display font-bold text-foreground">
               Goa&apos;s Best &amp; <span className="gold-text">Most Iconic</span>
-              <br className="hidden sm:block" /> Casino Experience
+              <br className="hidden sm:block" /> Casino's Experience
             </h1>
 
             {site.description && (
