@@ -15,6 +15,8 @@ import logoImg from "../assets/logo.webp";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
+import { WhatsAppIcon } from "../components/site/WhatsAppIcon";
+import { site } from "../lib/site";
 
 function NotFoundComponent() {
   return (
@@ -209,6 +211,16 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      <a
+        href={`https://wa.me/${site.whatsapp}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        className="fixed right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-[#25D366]/40 transition-transform duration-300 hover:scale-110 sm:right-6"
+        style={{ bottom: "calc(1rem + env(safe-area-inset-bottom))" }}
+      >
+        <WhatsAppIcon size={30} />
+      </a>
     </QueryClientProvider>
   );
 }

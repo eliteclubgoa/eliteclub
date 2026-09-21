@@ -1,17 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { useState, useEffect } from "react";
-import { ArrowUp } from "lucide-react";
 import { site, footerUseful, footerLegal } from "@/lib/site";
 
 export function Footer() {
-  const [showTop, setShowTop] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setShowTop(window.scrollY > 500);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <>
       <footer className="relative border-t border-[var(--border)] bg-[#0a0a0c]" id="site-footer">
@@ -113,15 +103,6 @@ export function Footer() {
         </div>
       </footer>
 
-      {/* Scroll to Top */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={`scroll-top-btn ${showTop ? "visible" : ""}`}
-        aria-label="Scroll to top"
-        id="scroll-to-top"
-      >
-        <ArrowUp size={18} />
-      </button>
     </>
   );
 }
