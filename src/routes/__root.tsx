@@ -103,13 +103,12 @@ export const Route = createRootRouteWithContext<{
         content: "width=device-width, initial-scale=1, viewport-fit=cover",
       },
       {
-        title:
-          "Luxurious Offshore Casino in Goa | Cruise Casino in Goa - The Elite Club",
+        title: "Elite Club Goa | Offshore Casino Experience in Goa",
       },
       {
         name: "description",
         content:
-          "The Elite Club is one of the largest luxurious offshore Casino in Goa. We offer extraordinary offers and the satisfaction of a fabulous evening. Check out for more!",
+          "Experience The Elite Club Casino in Goa with offshore gaming, live entertainment, dining, premium packages, and booking support on the Mandovi River.",
       },
       { name: "author", content: "The Elite Club" },
       {
@@ -119,27 +118,27 @@ export const Route = createRootRouteWithContext<{
       },
       {
         property: "og:title",
-        content:
-          "Luxurious Offshore Casino in Goa | Cruise Casino in Goa - The Elite Club",
+        content: "Elite Club Goa | Offshore Casino Experience in Goa",
       },
       {
         property: "og:description",
         content:
-          "The Elite Club is one of the largest luxurious offshore Casino in Goa. We offer extraordinary offers and the satisfaction of a fabulous evening.",
+          "Discover The Elite Club's offshore casino experience on the Mandovi River in Panaji, Goa, with casino games, entertainment, dining, and premium packages.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "The Elite Club" },
+      { property: "og:url", content: "https://www.eliteclubgoa.com/" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content:
-          "Luxurious Offshore Casino in Goa | Cruise Casino in Goa - The Elite Club",
+        content: "Elite Club Goa | Offshore Casino Experience in Goa",
       },
       {
         name: "twitter:description",
         content:
-          "The Elite Club is one of the largest luxurious offshore Casino in Goa. We offer extraordinary offers and the satisfaction of a fabulous evening.",
+          "Discover The Elite Club's offshore casino experience on the Mandovi River in Panaji, Goa, with casino games, entertainment, dining, and premium packages.",
       },
+      { name: "robots", content: "index, follow" },
     ],
     links: [
       {
@@ -165,6 +164,26 @@ export const Route = createRootRouteWithContext<{
       },
     ],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: site.name,
+          url: "https://www.eliteclubgoa.com/",
+          email: site.email,
+          telephone: site.phone,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "The Elite Club Jetty, River Mandovi",
+            addressLocality: "Panaji",
+            addressRegion: "Goa",
+            postalCode: "403001",
+            addressCountry: "IN",
+          },
+          sameAs: [site.instagram, site.facebook, site.youtube, site.twitter],
+        }),
+      },
       {
         type: "text/javascript",
         children: `

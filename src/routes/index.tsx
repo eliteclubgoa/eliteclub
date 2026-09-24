@@ -36,8 +36,13 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title:
-          "Luxurious Offshore Casino in Goa | Cruise Casino in Goa - The Elite Club",
+        title: "Elite Club Goa | Offshore Casino Experience in Goa",
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://www.eliteclubgoa.com/",
       },
     ],
   }),
