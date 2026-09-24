@@ -46,9 +46,7 @@ export function PremiumCard({
       <div className="flex flex-1 flex-col gap-3 p-4 sm:p-7">
         {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
         <h3 className="text-xl text-foreground sm:text-2xl">{title}</h3>
-        {text ? (
-          <p className="text-sm leading-relaxed text-muted-foreground">{text}</p>
-        ) : null}
+        {text ? <p className="text-sm leading-relaxed text-muted-foreground">{text}</p> : null}
         {footer ? <div className="mt-auto pt-4">{footer}</div> : null}
       </div>
     </article>

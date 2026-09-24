@@ -62,45 +62,45 @@
   --radius: 0.5rem;
 
   --background: #080809;
-  --foreground: #F7F2E8;
+  --foreground: #f7f2e8;
   --surface: #111113;
-  --surface-raised: #1A1918;
+  --surface-raised: #1a1918;
   --card: #111113;
-  --card-foreground: #F5F5F5;
-  --popover: #0F0F10;
-  --popover-foreground: #F5F5F5;
+  --card-foreground: #f5f5f5;
+  --popover: #0f0f10;
+  --popover-foreground: #f5f5f5;
 
-  --primary: #E7B955;
-  --primary-foreground: #0C0C0D;
-  --secondary: #1B1A18;
-  --secondary-foreground: #F5F5F5;
-  --muted: #1B1A18;
-  --muted-foreground: #A9A297;
+  --primary: #e7b955;
+  --primary-foreground: #0c0c0d;
+  --secondary: #1b1a18;
+  --secondary-foreground: #f5f5f5;
+  --muted: #1b1a18;
+  --muted-foreground: #a9a297;
 
-  --accent: #E7B955;
-  --accent-foreground: #0C0C0D;
+  --accent: #e7b955;
+  --accent-foreground: #0c0c0d;
   --accent-soft: rgba(231, 185, 85, 0.16);
 
-  --destructive: #DC2626;
-  --destructive-foreground: #F5F5F5;
+  --destructive: #dc2626;
+  --destructive-foreground: #f5f5f5;
 
   --border: rgba(255, 255, 255, 0.1);
   --hairline: rgba(255, 255, 255, 0.12);
   --input: rgba(255, 255, 255, 0.14);
   --ring: rgba(231, 185, 85, 0.5);
 
-  --sidebar: #0F0F10;
-  --sidebar-foreground: #F5F5F5;
-  --sidebar-primary: #FFD700;
-  --sidebar-primary-foreground: #0C0C0D;
-  --sidebar-accent: #1C1C1F;
-  --sidebar-accent-foreground: #F5F5F5;
+  --sidebar: #0f0f10;
+  --sidebar-foreground: #f5f5f5;
+  --sidebar-primary: #ffd700;
+  --sidebar-primary-foreground: #0c0c0d;
+  --sidebar-accent: #1c1c1f;
+  --sidebar-accent-foreground: #f5f5f5;
   --sidebar-border: rgba(255, 255, 255, 0.1);
   --sidebar-ring: rgba(255, 215, 0, 0.5);
 
-  --gold: #E7B955;
-  --gold-dark: #9C6C26;
-  --gold-light: #FFE7A3;
+  --gold: #e7b955;
+  --gold-dark: #9c6c26;
+  --gold-light: #ffe7a3;
   --header-height: 6.72rem;
 }
 
@@ -167,7 +167,7 @@
     width: 9px;
   }
   ::-webkit-scrollbar-track {
-    background: #0C0C0D;
+    background: #0c0c0d;
   }
   ::-webkit-scrollbar-thumb {
     background: #333;
@@ -204,12 +204,7 @@
 @utility hairline {
   height: 1px;
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-hairline),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, var(--color-hairline), transparent);
 }
 
 @utility grain {
@@ -264,7 +259,7 @@
 }
 
 @utility gold-text {
-  background: linear-gradient(135deg, #C88A2D, #FFE7A3 45%, #E7B955 70%, #9C6C26);
+  background: linear-gradient(135deg, #c88a2d, #ffe7a3 45%, #e7b955 70%, #9c6c26);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -295,7 +290,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
@@ -313,7 +309,8 @@
 }
 
 @keyframes pulse-gold {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
   }
   50% {
@@ -340,7 +337,7 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 0.5rem;
-  color: #F5F5F5;
+  color: #f5f5f5;
   font-family: var(--font-sans);
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -364,7 +361,7 @@
   display: block;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #A0A0A0;
+  color: #a0a0a0;
   margin-bottom: 0.5rem;
 }
 
@@ -387,7 +384,9 @@
 }
 
 .hero-kicker {
-  box-shadow: 0 0 0 1px rgba(231, 185, 85, 0.08), 0 16px 50px rgba(0, 0, 0, 0.28);
+  box-shadow:
+    0 0 0 1px rgba(231, 185, 85, 0.08),
+    0 16px 50px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(14px);
 }
 
@@ -413,13 +412,13 @@
 
 .plan-tag.youth {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.05));
-  color: #60A5FA;
+  color: #60a5fa;
   border-color: rgba(59, 130, 246, 0.2);
 }
 
 .plan-tag.kids {
   background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0.05));
-  color: #C084FC;
+  color: #c084fc;
   border-color: rgba(168, 85, 247, 0.2);
 }
 
@@ -467,7 +466,12 @@
 .game-card .game-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(12, 12, 13, 0.95) 0%, rgba(12, 12, 13, 0.4) 50%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(12, 12, 13, 0.95) 0%,
+    rgba(12, 12, 13, 0.4) 50%,
+    transparent 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -519,7 +523,7 @@
   height: 3rem;
   border-radius: 50%;
   background: var(--gold);
-  color: #0C0C0D;
+  color: #0c0c0d;
   border: none;
   cursor: pointer;
   display: flex;
@@ -550,19 +554,19 @@
   font-weight: 500;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: transparent;
-  color: #A0A0A0;
+  color: #a0a0a0;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .gallery-filter-btn:hover {
   border-color: rgba(255, 215, 0, 0.3);
-  color: #F5F5F5;
+  color: #f5f5f5;
 }
 
 .gallery-filter-btn.active {
   background: var(--gold);
-  color: #0C0C0D;
+  color: #0c0c0d;
   border-color: var(--gold);
 }
 
@@ -613,4 +617,3 @@
     font-size: 16px;
   }
 }
-

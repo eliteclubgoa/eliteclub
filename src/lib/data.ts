@@ -31,7 +31,8 @@ export const casinos: Casino[] = [
     name: "Casino Gold",
     location: "Candolim, Goa",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Casino+Gold+Candolim+Goa",
-    short: "A premium offshore casino in Goa offering a lively gaming experience with a variety of casino games, entertainment, dining, and nightlife.",
+    short:
+      "A premium offshore casino in Goa offering a lively gaming experience with a variety of casino games, entertainment, dining, and nightlife.",
     full: "A premium offshore casino in Goa offering a lively gaming experience with a variety of casino games, entertainment, dining, and nightlife.",
     image: casinoGold,
     gallery: [casinoGold, casinoRivers, dining1],
@@ -41,7 +42,8 @@ export const casinos: Casino[] = [
     name: "Casino Pride",
     location: "Panaji, Goa",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Casino+Pride+Panaji+Goa",
-    short: "A popular offshore casino in Goa known for its vibrant atmosphere, wide range of gaming options, live entertainment, and dining facilities.",
+    short:
+      "A popular offshore casino in Goa known for its vibrant atmosphere, wide range of gaming options, live entertainment, and dining facilities.",
     full: "A popular offshore casino in Goa known for its vibrant atmosphere, wide range of gaming options, live entertainment, and dining facilities.",
     image: casinoPride,
     gallery: [casinoPride, ocean7Casino, entertainment1],
@@ -51,7 +53,8 @@ export const casinos: Casino[] = [
     name: "Casino Rivers",
     location: "Patto, Panaji, Goa",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Casino+Rivers+Patto+Panaji+Goa",
-    short: "A modern offshore casino in Goa offering an exciting gaming environment along with entertainment, dining, and a premium casino experience.",
+    short:
+      "A modern offshore casino in Goa offering an exciting gaming environment along with entertainment, dining, and a premium casino experience.",
     full: "A modern offshore casino in Goa offering an exciting gaming environment along with entertainment, dining, and a premium casino experience.",
     image: casinoRivers,
     gallery: [casinoRivers, casinoGold, entertainment1],
@@ -61,7 +64,8 @@ export const casinos: Casino[] = [
     name: "Ocean 7",
     location: "Candolim, Goa",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Ocean+7+Candolim+Goa",
-    short: "A well-known offshore casino in Goa that provides a stylish gaming experience with multiple casino games, entertainment, and onboard dining.",
+    short:
+      "A well-known offshore casino in Goa that provides a stylish gaming experience with multiple casino games, entertainment, and onboard dining.",
     full: "A well-known offshore casino in Goa that provides a stylish gaming experience with multiple casino games, entertainment, and onboard dining.",
     image: ocean7Casino,
     gallery: [ocean7Casino, entertainment1, dining1],
@@ -71,7 +75,8 @@ export const casinos: Casino[] = [
     name: "Big Daddy Casino",
     location: "Patto, Panaji, Goa",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Big+Daddy+Casino+Patto+Panaji+Goa",
-    short: "One of Goa’s prominent offshore casinos, offering a luxurious casino experience with various games, entertainment, dining, and nightlife.",
+    short:
+      "One of Goa’s prominent offshore casinos, offering a luxurious casino experience with various games, entertainment, dining, and nightlife.",
     full: "One of Goa’s prominent offshore casinos, offering a luxurious casino experience with various games, entertainment, dining, and nightlife.",
     image: bigDaddy,
     gallery: [bigDaddy, dining1, casinoGold],
@@ -81,7 +86,8 @@ export const casinos: Casino[] = [
     name: "Big Daddy Casino",
     location: "Candolim, Goa",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Big+Daddy+Casino+Candolim+Goa",
-    short: "A premium offshore casino in Candolim, Goa, offering an exciting gaming experience, live entertainment, dining, and nightlife.",
+    short:
+      "A premium offshore casino in Candolim, Goa, offering an exciting gaming experience, live entertainment, dining, and nightlife.",
     full: "A premium offshore casino in Candolim, Goa, offering an exciting gaming experience, live entertainment, dining, and nightlife.",
     image: strikeCasino,
     gallery: [strikeCasino, casinoGold, entertainment1],

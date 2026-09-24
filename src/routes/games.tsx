@@ -53,34 +53,32 @@ export function GamesPage() {
               key={active}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
             >
-            {filteredGames.map((game) => (
-              <RevealItem key={game.name}>
-                <div className="game-card game-card--live aspect-[4/3]">
-                  <GameAnimation name={game.name} full />
-                  <div className="game-overlay">
-                    <span className="text-[0.65rem] font-medium text-[var(--gold)] tracking-widest uppercase mb-1">
-                      {game.category}
-                    </span>
-                    <h3 className="text-xl font-bold font-display text-foreground mb-1">
-                      {game.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      {game.tagline}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Rules */}
-                <div className="mt-4 space-y-2 px-1">
-                  {game.rules.map((rule, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--gold)] shrink-0" />
-                      <p className="text-sm text-muted-foreground">{rule}</p>
+              {filteredGames.map((game) => (
+                <RevealItem key={game.name}>
+                  <div className="game-card game-card--live aspect-[4/3]">
+                    <GameAnimation name={game.name} full />
+                    <div className="game-overlay">
+                      <span className="text-[0.65rem] font-medium text-[var(--gold)] tracking-widest uppercase mb-1">
+                        {game.category}
+                      </span>
+                      <h3 className="text-xl font-bold font-display text-foreground mb-1">
+                        {game.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-3">{game.tagline}</p>
                     </div>
-                  ))}
-                </div>
-              </RevealItem>
-            ))}
+                  </div>
+
+                  {/* Rules */}
+                  <div className="mt-4 space-y-2 px-1">
+                    {game.rules.map((rule, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--gold)] shrink-0" />
+                        <p className="text-sm text-muted-foreground">{rule}</p>
+                      </div>
+                    ))}
+                  </div>
+                </RevealItem>
+              ))}
             </RevealGroup>
           ) : (
             <div className="py-16 text-center text-muted-foreground">

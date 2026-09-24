@@ -10,12 +10,8 @@ import { HeroVideo } from "@/components/site/HeroVideo";
 const CasinoPage = lazy(() =>
   import("./casino").then((module) => ({ default: module.CasinoPage })),
 );
-const GamesPage = lazy(() =>
-  import("./games").then((module) => ({ default: module.GamesPage })),
-);
-const PlansPage = lazy(() =>
-  import("./plans").then((module) => ({ default: module.PlansPage })),
-);
+const GamesPage = lazy(() => import("./games").then((module) => ({ default: module.GamesPage })));
+const PlansPage = lazy(() => import("./plans").then((module) => ({ default: module.PlansPage })));
 const GalleryPage = lazy(() =>
   import("./gallery").then((module) => ({ default: module.GalleryPage })),
 );
@@ -94,9 +90,7 @@ function AnimatedCounter({
         {count}
         {suffix}
       </div>
-      <p className="text-xs sm:text-sm text-muted-foreground tracking-wide">
-        {label}
-      </p>
+      <p className="text-xs sm:text-sm text-muted-foreground tracking-wide">{label}</p>
     </div>
   );
 }
@@ -110,7 +104,10 @@ function Index() {
       {/* ============================================================ */}
       {/*  HERO BANNER                                                  */}
       {/* ============================================================ */}
-      <section className="gradient-hero relative isolate overflow-hidden border-b border-[var(--border)] pt-10 pb-10 sm:pt-12 sm:pb-12 lg:pt-14 lg:pb-14" id="hero-section">
+      <section
+        className="gradient-hero relative isolate overflow-hidden border-b border-[var(--border)] pt-10 pb-10 sm:pt-12 sm:pb-12 lg:pt-14 lg:pb-14"
+        id="hero-section"
+      >
         <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <Reveal delay={0} y={24} className="mx-auto max-w-4xl text-center">
             <h1 className="hero-title page-title mb-4 font-display font-bold text-foreground">

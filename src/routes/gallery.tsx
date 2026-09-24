@@ -47,10 +47,7 @@ export const Route = createFileRoute("/gallery")({
 });
 
 export function GalleryPage() {
-  const categories = [
-    "All",
-    ...new Set(galleryItems.map((g) => g.category)),
-  ];
+  const categories = ["All", ...new Set(galleryItems.map((g) => g.category))];
   const [active, setActive] = useState("All");
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [isClosing, setIsClosing] = useState(false);

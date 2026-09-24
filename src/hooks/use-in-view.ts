@@ -39,7 +39,7 @@ export function useInView<T extends Element = HTMLDivElement>({
           root: null,
           rootMargin: margin,
           threshold: amount,
-        }
+        },
       );
 
       observer.observe(el);

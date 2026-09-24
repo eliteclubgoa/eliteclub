@@ -33,8 +33,7 @@ export function ContactPage() {
     const errors: Record<string, string> = {};
     if (!formData.full_name || formData.full_name.length < 3)
       errors.full_name = "Enter at least 3 characters.";
-    if (!/^\S+@\S+\.\S+$/.test(formData.email))
-      errors.email = "Enter a valid email address.";
+    if (!/^\S+@\S+\.\S+$/.test(formData.email)) errors.email = "Enter a valid email address.";
     if (!/^\d{10,}$/.test(formData.phone.replace(/\D/g, "")))
       errors.phone = "Enter a valid phone number.";
     if (!formData.enquiry || formData.enquiry.length < 10)
@@ -86,7 +85,6 @@ export function ContactPage() {
                     </div>
                   </div>
 
-
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center shrink-0 text-[var(--gold)]">
                       <Clock size={22} />
@@ -95,9 +93,7 @@ export function ContactPage() {
                       <h4 className="text-sm font-semibold text-foreground mb-1 uppercase tracking-wider">
                         Operating Hours
                       </h4>
-                      <p className="text-sm text-muted-foreground">
-                        Open 24 Hours / 7 Days a Week
-                      </p>
+                      <p className="text-sm text-muted-foreground">Open 24 Hours / 7 Days a Week</p>
                     </div>
                   </div>
 
@@ -123,7 +119,9 @@ export function ContactPage() {
                       Valet Parking
                     </h4>
                     <p className="text-sm leading-relaxed text-muted-foreground">
-                      Available at the Panjim boarding point from 6:30 p.m. to 6:30 a.m., subject to driver and parking-space availability. Valet is for confirmed bookings and eligible private four-wheelers only, at the vehicle owner&apos;s risk.
+                      Available at the Panjim boarding point from 6:30 p.m. to 6:30 a.m., subject to
+                      driver and parking-space availability. Valet is for confirmed bookings and
+                      eligible private four-wheelers only, at the vehicle owner&apos;s risk.
                     </p>
                   </div>
                 </div>
@@ -147,15 +145,11 @@ export function ContactPage() {
                       id="contact_name"
                       placeholder="Full Name"
                       value={formData.full_name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, full_name: e.target.value })
-                      }
+                      onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
                       className={`form-input ${formErrors.full_name ? "error" : ""}`}
                     />
                     {formErrors.full_name && (
-                      <p className="text-xs text-red-400 mt-1">
-                        {formErrors.full_name}
-                      </p>
+                      <p className="text-xs text-red-400 mt-1">{formErrors.full_name}</p>
                     )}
                   </div>
 
@@ -168,15 +162,11 @@ export function ContactPage() {
                       id="contact_email"
                       placeholder="Email"
                       value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className={`form-input ${formErrors.email ? "error" : ""}`}
                     />
                     {formErrors.email && (
-                      <p className="text-xs text-red-400 mt-1">
-                        {formErrors.email}
-                      </p>
+                      <p className="text-xs text-red-400 mt-1">{formErrors.email}</p>
                     )}
                   </div>
 
@@ -189,15 +179,11 @@ export function ContactPage() {
                       id="contact_phone"
                       placeholder="Phone Number"
                       value={formData.phone}
-                      onChange={(e) =>
-                        setFormData({ ...formData, phone: e.target.value })
-                      }
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className={`form-input ${formErrors.phone ? "error" : ""}`}
                     />
                     {formErrors.phone && (
-                      <p className="text-xs text-red-400 mt-1">
-                        {formErrors.phone}
-                      </p>
+                      <p className="text-xs text-red-400 mt-1">{formErrors.phone}</p>
                     )}
                   </div>
 
@@ -210,15 +196,11 @@ export function ContactPage() {
                       rows={5}
                       placeholder="How can we help you?"
                       value={formData.enquiry}
-                      onChange={(e) =>
-                        setFormData({ ...formData, enquiry: e.target.value })
-                      }
+                      onChange={(e) => setFormData({ ...formData, enquiry: e.target.value })}
                       className={`form-input resize-none ${formErrors.enquiry ? "error" : ""}`}
                     />
                     {formErrors.enquiry && (
-                      <p className="text-xs text-red-400 mt-1">
-                        {formErrors.enquiry}
-                      </p>
+                      <p className="text-xs text-red-400 mt-1">{formErrors.enquiry}</p>
                     )}
                   </div>
 

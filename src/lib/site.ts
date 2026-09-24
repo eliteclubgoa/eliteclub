@@ -17,8 +17,7 @@ export const site = {
   instagram: "https://www.instagram.com/majesticpridegroup/",
   facebook: "https://www.facebook.com/Majesticpridegroup/",
   youtube: "https://www.youtube.com/channel/UCA-uRWcgPS2HkLokj_A9vng",
-  twitter:
-    "https://twitter.com/majestic_pride?t=e7FixMK2QfRWf-N9yxjvZQ&s=09",
+  twitter: "https://twitter.com/majestic_pride?t=e7FixMK2QfRWf-N9yxjvZQ&s=09",
   mapEmbed:
     "https://maps.google.com/maps?q=The+Elite+Club+Jetty%2C+River+Mandovi%2C+Near+District+And+Sessions+Court%2C+Panaji%2C+Goa+403001&t=&z=15&ie=UTF8&iwloc=&output=embed",
 } as const;
