@@ -17,19 +17,19 @@ The site presents the casino experience, games, package options, gallery, accomm
 
 ## Routes
 
-| Path | Purpose |
-| --- | --- |
-| `/` | Homepage and primary casino experience overview |
-| `/casino` | Casino experience and venue information |
-| `/games` | Available games and rules |
-| `/plans` | Premium packages and benefits |
-| `/gallery` | Filterable casino, entertainment, and dining gallery |
-| `/contact` | Contact details, location, and enquiries |
-| `/blogs` | Blog content |
-| `/important-information` | Guest and casino information |
-| `/terms` | Terms and conditions |
-| `/otpc-terms` | OTPC terms and conditions |
-| `/refund-cancellation` | Refund and cancellation policy |
+| Path                     | Purpose                                              |
+| ------------------------ | ---------------------------------------------------- |
+| `/`                      | Homepage and primary casino experience overview      |
+| `/casino`                | Casino experience and venue information              |
+| `/games`                 | Available games and rules                            |
+| `/plans`                 | Premium packages and benefits                        |
+| `/gallery`               | Filterable casino, entertainment, and dining gallery |
+| `/contact`               | Contact details, location, and enquiries             |
+| `/blogs`                 | Blog content                                         |
+| `/important-information` | Guest and casino information                         |
+| `/terms`                 | Terms and conditions                                 |
+| `/otpc-terms`            | OTPC terms and conditions                            |
+| `/refund-cancellation`   | Refund and cancellation policy                       |
 
 ## Tech stack
 
@@ -46,7 +46,7 @@ The site presents the casino experience, games, package options, gallery, accomm
 
 ## Requirements
 
-- Node.js  ES2022-compatible runtime. Node.js 20 or newer is recommended.
+- Node.js ES2022-compatible runtime. Node.js 20 or newer is recommended.
 - npm or Bun.
 
 No environment variables are required by the current application. External service URLs and contact details are centralized in `src/lib/site.ts`.
@@ -80,14 +80,14 @@ bun run dev
 
 ## Available scripts
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the Vite development server |
-| `npm run build` | Create a production build |
+| Command             | Description                                |
+| ------------------- | ------------------------------------------ |
+| `npm run dev`       | Start the Vite development server          |
+| `npm run build`     | Create a production build                  |
 | `npm run build:dev` | Create a development-mode production build |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint across the project |
-| `npm run format` | Format project files with Prettier |
+| `npm run preview`   | Preview the production build locally       |
+| `npm run lint`      | Run ESLint across the project              |
+| `npm run format`    | Format project files with Prettier         |
 
 Before opening a pull request, run:
 
@@ -148,4 +148,3 @@ npm run preview
 ```
 
 Deploy the generated application using a hosting target supported by the Nitro adapter selected by the Vite configuration. Confirm the target's TanStack Start/Nitro instructions before deploying, especially for SSR, external redirects, and the custom `src/server.ts` entry.
-

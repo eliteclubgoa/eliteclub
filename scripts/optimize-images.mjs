@@ -30,7 +30,7 @@ function formatKB(bytes) {
 async function compressWebP(filePath, maxWidth) {
   const before = await getFileSize(filePath);
   const tempPath = filePath + ".tmp.webp";
-  
+
   const inputBuffer = await readFile(filePath);
   const buffer = await sharp(inputBuffer)
     .resize({ width: maxWidth, withoutEnlargement: true })
@@ -44,7 +44,7 @@ async function compressWebP(filePath, maxWidth) {
     await rename(tempPath, filePath);
     const after = buffer.length;
     console.log(
-      `  ✅ ${basename(filePath)}: ${formatKB(before)} → ${formatKB(after)} (${Math.round((1 - after / before) * 100)}% smaller)`
+      `  ✅ ${basename(filePath)}: ${formatKB(before)} → ${formatKB(after)} (${Math.round((1 - after / before) * 100)}% smaller)`,
     );
     return { before, after };
   } else {
@@ -66,7 +66,7 @@ async function convertToWebP(filePath, maxWidth) {
   await sharp(buffer).toFile(webpPath);
   const after = buffer.length;
   console.log(
-    `  ✅ ${basename(filePath)} → ${basename(webpPath)}: ${formatKB(before)} → ${formatKB(after)} (${Math.round((1 - after / before) * 100)}% smaller)`
+    `  ✅ ${basename(filePath)} → ${basename(webpPath)}: ${formatKB(before)} → ${formatKB(after)} (${Math.round((1 - after / before) * 100)}% smaller)`,
   );
   return { before, after, webpPath, originalPath: filePath };
 }
@@ -89,7 +89,7 @@ async function processDirectory(dir, maxWidth, label) {
   }
 
   console.log(
-    `  📊 Total: ${formatKB(totalBefore)} → ${formatKB(totalAfter)} (${Math.round((1 - totalAfter / totalBefore) * 100)}% reduction)`
+    `  📊 Total: ${formatKB(totalBefore)} → ${formatKB(totalAfter)} (${Math.round((1 - totalAfter / totalBefore) * 100)}% reduction)`,
   );
 }
 

@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import faviconPng from "../assets/favicon.png";
@@ -25,12 +26,9 @@ function NotFoundComponent() {
       <div className="flex min-h-screen items-center justify-center bg-background px-4 pt-[calc(var(--header-height)+2rem)]">
         <div className="max-w-md text-center">
           <h1 className="text-7xl font-bold gold-text font-display">404</h1>
-          <h2 className="mt-4 text-xl font-semibold text-foreground">
-            Page not found
-          </h2>
+          <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            The page you&apos;re looking for doesn&apos;t exist or has been
-            moved.
+            The page you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
           <div className="mt-6">
             <Link
@@ -47,13 +45,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({
-  error,
-  reset,
-}: {
-  error: Error;
-  reset: () => void;
-}) {
+function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -67,8 +59,7 @@ function ErrorComponent({
           This page didn&apos;t load
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back
-          home.
+          Something went wrong on our end. You can try refreshing or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -190,8 +181,8 @@ export const Route = createRootRouteWithContext<{
           // Fallback for fonts if JS is disabled
           document.documentElement.className += " js";
         `,
-      }
-    ]
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -214,6 +205,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );

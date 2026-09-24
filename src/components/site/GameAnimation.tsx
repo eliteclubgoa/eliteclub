@@ -46,13 +46,7 @@ function PlayingCard({
   );
 }
 
-function Chip({
-  className = "",
-  style,
-}: {
-  className?: string;
-  style?: Vars;
-}) {
+function Chip({ className = "", style }: { className?: string; style?: Vars }) {
   return <span className={`ga-chip ${className}`} style={style} />;
 }
 
@@ -60,26 +54,54 @@ function Chip({
 
 // Real American wheel order — 38 pockets: 0, 00 and 1–36
 const AMERICAN_WHEEL = [
-  "0", "28", "9", "26", "30", "11", "7", "20", "32", "17", "5", "22",
-  "34", "15", "3", "24", "36", "13", "1", "00", "27", "10", "25", "29",
-  "12", "8", "19", "31", "18", "6", "21", "33", "16", "4", "23", "35",
-  "14", "2",
+  "0",
+  "28",
+  "9",
+  "26",
+  "30",
+  "11",
+  "7",
+  "20",
+  "32",
+  "17",
+  "5",
+  "22",
+  "34",
+  "15",
+  "3",
+  "24",
+  "36",
+  "13",
+  "1",
+  "00",
+  "27",
+  "10",
+  "25",
+  "29",
+  "12",
+  "8",
+  "19",
+  "31",
+  "18",
+  "6",
+  "21",
+  "33",
+  "16",
+  "4",
+  "23",
+  "35",
+  "14",
+  "2",
 ];
 
-const RED_NUMBERS = new Set([
-  1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36,
-]);
+const RED_NUMBERS = new Set([1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]);
 
 const POCKET_SEGMENT = 360 / AMERICAN_WHEEL.length;
 
 function pocketGradient() {
   const stops = AMERICAN_WHEEL.map((n, i) => {
     const color =
-      n === "0" || n === "00"
-        ? "#0a6b3c"
-        : RED_NUMBERS.has(Number(n))
-          ? "#9c2727"
-          : "#15100a";
+      n === "0" || n === "00" ? "#0a6b3c" : RED_NUMBERS.has(Number(n)) ? "#9c2727" : "#15100a";
     const from = (i * POCKET_SEGMENT).toFixed(2);
     const to = ((i + 1) * POCKET_SEGMENT).toFixed(2);
     return `${color} ${from}deg ${to}deg`;
@@ -517,13 +539,7 @@ const FELT: Record<string, string> = {
   "Electronic Gaming": "purple",
 };
 
-export function GameAnimation({
-  name,
-  full = false,
-}: {
-  name: string;
-  full?: boolean;
-}) {
+export function GameAnimation({ name, full = false }: { name: string; full?: boolean }) {
   const Scene = GAME_SCENES[name];
   if (!Scene) return null;
 
@@ -532,10 +548,18 @@ export function GameAnimation({
       <div className="ga-fill" data-felt={FELT[name]} aria-hidden="true">
         <div className="ga-felt-texture" />
         <div className="ga-light-sweep" />
-        <span className="ga-amb-suit" style={{ top: "6%", left: "8%" }}>♠</span>
-        <span className="ga-amb-suit is-red" style={{ top: "10%", right: "10%" }}>♥</span>
-        <span className="ga-amb-suit is-red" style={{ bottom: "26%", left: "12%" }}>♦</span>
-        <span className="ga-amb-suit" style={{ bottom: "30%", right: "8%" }}>♣</span>
+        <span className="ga-amb-suit" style={{ top: "6%", left: "8%" }}>
+          ♠
+        </span>
+        <span className="ga-amb-suit is-red" style={{ top: "10%", right: "10%" }}>
+          ♥
+        </span>
+        <span className="ga-amb-suit is-red" style={{ bottom: "26%", left: "12%" }}>
+          ♦
+        </span>
+        <span className="ga-amb-suit" style={{ bottom: "30%", right: "8%" }}>
+          ♣
+        </span>
         <Scene />
         <div className="ga-vignette" />
       </div>

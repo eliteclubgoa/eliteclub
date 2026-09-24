@@ -29,7 +29,12 @@ function LegalPage({ title, points }: { title: string; points: string[] }) {
           <h1 className="page-title mb-6 font-bold font-display text-foreground">{title}</h1>
           <ul className="list-none space-y-3 border-t border-[var(--border)] pt-8 text-sm leading-relaxed text-muted-foreground sm:text-base">
             {points.map((point) => (
-              <li key={point} className="relative pl-5 before:absolute before:left-0 before:text-[var(--gold)] before:content-['➢']">{point}</li>
+              <li
+                key={point}
+                className="relative pl-5 before:absolute before:left-0 before:text-[var(--gold)] before:content-['➢']"
+              >
+                {point}
+              </li>
             ))}
           </ul>
         </Reveal>

@@ -31,12 +31,7 @@ export function SectionHeading({
           {subtitle}
         </p>
       ) : null}
-      <div
-        className={cn(
-          "mt-8 h-px w-24 bg-accent/60",
-          align === "center" && "mx-auto",
-        )}
-      />
+      <div className={cn("mt-8 h-px w-24 bg-accent/60", align === "center" && "mx-auto")} />
     </Reveal>
   );
 }

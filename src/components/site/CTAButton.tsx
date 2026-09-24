@@ -10,8 +10,7 @@ const base =
 const variants: Record<Variant, string> = {
   primary:
     "bg-[linear-gradient(135deg,var(--gold-light),var(--gold),var(--gold-dark))] text-accent-foreground hover:shadow-[0_14px_35px_rgba(231,185,85,0.22)]",
-  outline:
-    "border border-hairline text-foreground hover:border-accent hover:text-accent",
+  outline: "border border-hairline text-foreground hover:border-accent hover:text-accent",
   ghost: "text-muted-foreground hover:text-accent",
 };
 

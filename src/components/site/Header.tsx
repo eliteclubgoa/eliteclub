@@ -24,10 +24,7 @@ export function Header() {
     if (!el) return;
 
     const syncHeaderHeight = () => {
-      document.documentElement.style.setProperty(
-        "--header-height",
-        `${el.offsetHeight}px`,
-      );
+      document.documentElement.style.setProperty("--header-height", `${el.offsetHeight}px`);
     };
 
     syncHeaderHeight();
@@ -79,9 +76,7 @@ export function Header() {
                   key={link.to}
                   to={link.to}
                   className={`relative px-3 py-2.5 text-[0.95rem] font-medium tracking-wide transition-colors duration-300 hover:text-[var(--gold)] ${
-                    currentPath === link.to
-                      ? "text-[var(--gold)]"
-                      : "text-foreground/80"
+                    currentPath === link.to ? "text-[var(--gold)]" : "text-foreground/80"
                   }`}
                 >
                   {link.label}
