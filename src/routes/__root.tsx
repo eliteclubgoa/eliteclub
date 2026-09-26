@@ -11,7 +11,6 @@ import { useEffect, type ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
-import faviconPng from "../assets/favicon.png";
 import logoImg from "../assets/logo.webp";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "../components/site/Header";
@@ -136,7 +135,7 @@ export const Route = createRootRouteWithContext<{
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: faviconPng, type: "image/png", sizes: "32x32" },
+      { rel: "icon", href: "/favicon.png", type: "image/png", sizes: "32x32" },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
