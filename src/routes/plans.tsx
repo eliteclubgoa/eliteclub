@@ -19,7 +19,7 @@ export const Route = createFileRoute("/plans")({
   component: PlansPage,
   head: () => ({
     meta: [
-      { title: "Plans | The Elite Club - Premium Membership Offers" },
+      { title: "Casino Plans & Memberships in Goa | Elite Club Goa" },
       {
         name: "description",
         content:

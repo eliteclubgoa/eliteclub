@@ -36,7 +36,7 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
   head: () => ({
     meta: [
-      { title: "Gallery | The Elite Club Casino - Photo Gallery" },
+      { title: "Casino Gallery in Goa | Elite Club Goa" },
       {
         name: "description",
         content:

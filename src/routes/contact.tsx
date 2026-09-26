@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact Us | The Elite Club Casino Goa" },
+      { title: "Contact Elite Club Goa | Casino in Goa" },
       {
         name: "description",
         content:

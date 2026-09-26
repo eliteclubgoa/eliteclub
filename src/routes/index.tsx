@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Elite Club Goa | Offshore Casino Experience in Goa",
+        title: "Casino in Goa | Elite Club Goa - Offshore Casino Experience",
       },
     ],
     links: [

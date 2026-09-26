@@ -8,7 +8,7 @@ export const Route = createFileRoute("/casino")({
   component: CasinoPage,
   head: () => ({
     meta: [
-      { title: "Casino | The Elite Club - Offshore Casino in Goa" },
+      { title: "Casino in Goa | Elite Club Goa - Offshore Casino" },
       {
         name: "description",
         content:

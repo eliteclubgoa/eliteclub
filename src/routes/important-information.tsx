@@ -5,7 +5,7 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/important-information")({
   component: ImportantInformationPage,
   head: () => ({
-    meta: [{ title: "Important Information | The Elite Club Casino Goa" }],
+    meta: [{ title: "Important Information | Elite Club Goa" }],
   }),
 });
 

@@ -4,7 +4,7 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/otpc-terms")({
   component: OtpcTermsPage,
   head: () => ({
-    meta: [{ title: "OTPC Terms & Conditions | The Elite Club Casino Goa" }],
+    meta: [{ title: "OTPC Terms & Conditions | Elite Club Goa" }],
   }),
 });
 

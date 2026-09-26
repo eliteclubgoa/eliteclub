@@ -4,7 +4,7 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/refund-cancellation")({
   component: RefundCancellationPage,
   head: () => ({
-    meta: [{ title: "Refund & Cancellation Policy | The Elite Club Casino Goa" }],
+    meta: [{ title: "Refund & Cancellation Policy | Elite Club Goa" }],
   }),
 });
 
